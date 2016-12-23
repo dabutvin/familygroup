@@ -1,0 +1,13 @@
+{
+  "name": "familygroup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dabutvin",
+  "dependencies": {
+    "webpack": "^1.14.0"
+  }
+}
