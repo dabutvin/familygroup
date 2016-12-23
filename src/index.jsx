@@ -1,10 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-class Book extends React.Component {
-  render () {
-    return <p> Book !</p>;
-  }
-}
+import Book from './book.jsx';
 
 render(<Book/>, document.getElementById('book'));
