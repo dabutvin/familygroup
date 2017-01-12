@@ -7,10 +7,8 @@ class Book extends React.Component {
     return (
     	<div>
     		<p> Book !</p>
-    		<Page />
-    		<Page />
-    		<Page />
-    		<Page />
+    		<Page num="0" />
+    		<Page num="1" />
     	</div>
     );
   }
