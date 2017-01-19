@@ -10,12 +10,21 @@ class Book extends React.Component {
     		<p> Book !</p>
     		<hr />
     		 {Data.pages.map(function (page) {
-    			return(
-    				<div className="page">
-    					<p className="text-right">{Moment(page.date).format('dddd - MMMM DD, YYYY,').toString()}</p>
-    					<div className="page-text" dangerouslySetInnerHTML={{__html: page.text}} />
-    					<hr />
-    				</div>
+    			return (
+    				<div className="row page">
+	    				<div className="column medium-6">
+	    					<p className="page-date">{Moment(page.date).format('dddd - MMMM DD, YYYY').toString()}</p>
+	    					<div className="page-text" dangerouslySetInnerHTML={{__html: page.text}} />
+	    					<hr />
+	    				</div>
+	    				<div className="column medium-6">
+	    					{page.images.map(function(image) {
+	    						return (
+	    							<img src={image} />
+	    						)
+	    					})}
+	    				</div>
+	    			</div>
     			)
     		 })}
     	</div>
