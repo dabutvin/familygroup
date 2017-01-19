@@ -11,9 +11,9 @@ class Book extends React.Component {
     		<hr />
     		 {Data.pages.map(function (page) {
     			return(
-    				<div>
-    					<p>{Moment(page.date).format('dddd - MMMM DD, YYYY,').toString()}</p>
-    					<div dangerouslySetInnerHTML={{__html: page.text}} />
+    				<div className="page">
+    					<p className="text-right">{Moment(page.date).format('dddd - MMMM DD, YYYY,').toString()}</p>
+    					<div className="page-text" dangerouslySetInnerHTML={{__html: page.text}} />
     					<hr />
     				</div>
     			)
