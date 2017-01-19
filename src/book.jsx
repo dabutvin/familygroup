@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 
 import Data from './data.jsx';
 
@@ -11,7 +12,7 @@ class Book extends React.Component {
     		 {Data.pages.map(function (page) {
     			return(
     				<div>
-    					<p>{page.date}</p>
+    					<p>{Moment(page.date).format('dddd - MMMM DD, YYYY,').toString()}</p>
     					<div dangerouslySetInnerHTML={{__html: page.text}} />
     					<hr />
     				</div>
