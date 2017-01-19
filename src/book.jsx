@@ -11,8 +11,8 @@ class Book extends React.Component {
     		 {Data.pages.map(function (page) {
     			return(
     				<div>
-    					<p>{page.thing}</p>
     					<p>{page.date}</p>
+    					<div dangerouslySetInnerHTML={{__html: page.text}} />
     					<hr />
     				</div>
     			)
