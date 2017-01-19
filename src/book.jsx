@@ -1,14 +1,22 @@
 import React from 'react';
 
-import Page from './page.jsx';
+import Data from './data.jsx';
 
 class Book extends React.Component {
   render () {
     return (
     	<div>
     		<p> Book !</p>
-    		<Page num="0" />
-    		<Page num="1" />
+    		<hr />
+    		 {Data.pages.map(function (page) {
+    			return(
+    				<div>
+    					<p>{page.thing}</p>
+    					<p>{page.date}</p>
+    					<hr />
+    				</div>
+    			)
+    		 })}
     	</div>
     );
   }
