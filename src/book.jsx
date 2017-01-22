@@ -32,16 +32,26 @@ class Book extends React.Component {
 					    										return (
 						    										<li>
 						    											<span>{recordkey}</span>
-						    											<span>{record.data[recordkey]}</span>
+						    											{record.isexpense &&
+						    												<span className="record-expense">{record.data[recordkey]}</span>
+						    											}
+						    											{!record.isexpense &&
+						    												<span>{record.data[recordkey]}</span>
+						    											}
 						    										</li>
 						    									)
 						    								})}
 						    							</ul>
-						    							<p className="record-total">Total <span className="float-right">{record.total}</span></p>
-					    								<hr />
+						    							{record.isexpense &&
+						    								<p className="record-total">Total <span className="record-expense float-right">-{record.total}</span></p>
+						    							}
+						    							{!record.isexpense &&
+						    								<p className="record-total">Total <span className="float-right">+{record.total}</span></p>
+						    							}
 					    							</div>
 				    							)
 			    							})}
+			    							<p className="text-right">Final balance: {Data.balances[page.date].finalbalance}</p>
 			    						</div>
 			    					</div>
 		    					</div>

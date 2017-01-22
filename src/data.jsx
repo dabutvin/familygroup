@@ -38,8 +38,32 @@ export default {
 						"Dan": "2.00"
 					},
 					"total": "$23.00"
+				},
+				{
+					"title": "Happy Day Fund:",
+					"data": {
+						"Nat & Dorothy's Anniv.": ".21",
+						"Irv. & Ben's     \" ": ".15",
+						"Milton's birthday": ".10",
+						"Max and Jay's     \" ": "1.00",
+						"Sam's             \" ": "1.00",
+						"Mama's            \" ": ".25",
+						"Dan & Hilda's     \" ": ".25"
+					},
+					"total": "$2.96"
+				},
+				{
+					"title": "Less expenses:",
+					"data": {
+						"Flowers to Harriet": "-1.50",
+						"Flowers to Sophie": "-2.10",
+						"Anniv. and birthday cards": "-1.16"
+					},
+					"total": "$4.76",
+					"isexpense": true
 				}
-			]
+			],
+			"finalbalance": "$21.18"
 		}
 	}
 }
