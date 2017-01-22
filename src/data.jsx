@@ -12,6 +12,7 @@ export default {
 			"date": "06-18-1939",
 			"images": [
 				"/images/06-18-1939.jpg",
+				"/images/06-18-1939-2.jpg"
 			],
 			"text": "<p>The second regular meeting of the Isaac and Celia Sklar Family Group was held at the home of Gussie and Willie on Father's Day, June 18th. The President, William opened the meeting at 5.15 P.M.  The entire family was present. Minutes of previous meeting were read and approved.</p><p>Under unfinished business, the subject of the Family Plot was brought up, and this was more fully explained by Louis, and details were to be worked out about buying same.</p><p>Sam discussed the paying of more dues per year, so that we may have more capital in the treas- ury if needed. This subject was tabled until Fall. </p><p>Motion was made by Louis that we have a prayer at the beginning of the meeting and also at closing, and that one of the Juniors past the age of 13 years, be selected as Chaplain.  A proper ritual to be composed and used at each meeting. A Chaplain to be appointed once a month.</p><p>A motion was made by Gussie, that we have a Happy day Fund for all happy occasion. Enthusiast— ically passed and the sum of $2.96 collected.</p><p>Under Good and welfare, Harriet suggested that we have some entertainment at each meeting, such as a Choral Group. This was tabled and a com— mittee consisting of Harriet, Gertrude and Bobby, are to be chairmen of Entertainment Committee. </p><p>Dues were collected and the sum of $23.00 was turned over to the Treasurer.</p><p>Our guest was Charles Sussman at this meeting.</p><p>Our Hostess served us a very lovely supper to which we did full justice.</p><p>The next meeting will be held in the Fall.</p><p>Respectfully submitted </p><p>Beatrice Pinchuk, </p><p>Sec'y. </p>"
 		},
@@ -20,5 +21,25 @@ export default {
 			"images": [],
 			"text": "one more"
 		}
-	]
+	],
+	"balances": {
+		"06-18-1939": {
+			"title": "Treasurer reports balance 6/18/39----$21.18",
+			"records": [
+				{
+					"title": "Dues collected for 1939/1940",
+					"data": {
+						"Irving": "2.00",
+						"Wiliam": "2.00",
+						"Louis": "5.00",
+						"Sam": "6.00",
+						"Nat": "2.00",
+						"Max": "4.00",
+						"Dan": "2.00"
+					},
+					"total": "$23.00"
+				}
+			]
+		}
+	}
 }
