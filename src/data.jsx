@@ -14,12 +14,29 @@ export default {
 				"/images/06-18-1939.jpg",
 				"/images/06-18-1939-2.jpg"
 			],
-			"text": "<p>The second regular meeting of the Isaac and Celia Sklar Family Group was held at the home of Gussie and Willie on Father's Day, June 18th. The President, William opened the meeting at 5.15 P.M.  The entire family was present. Minutes of previous meeting were read and approved.</p><p>Under unfinished business, the subject of the Family Plot was brought up, and this was more fully explained by Louis, and details were to be worked out about buying same.</p><p>Sam discussed the paying of more dues per year, so that we may have more capital in the treas- ury if needed. This subject was tabled until Fall. </p><p>Motion was made by Louis that we have a prayer at the beginning of the meeting and also at closing, and that one of the Juniors past the age of 13 years, be selected as Chaplain.  A proper ritual to be composed and used at each meeting. A Chaplain to be appointed once a month.</p><p>A motion was made by Gussie, that we have a Happy day Fund for all happy occasion. Enthusiast— ically passed and the sum of $2.96 collected.</p><p>Under Good and welfare, Harriet suggested that we have some entertainment at each meeting, such as a Choral Group. This was tabled and a com— mittee consisting of Harriet, Gertrude and Bobby, are to be chairmen of Entertainment Committee. </p><p>Dues were collected and the sum of $23.00 was turned over to the Treasurer.</p><p>Our guest was Charles Sussman at this meeting.</p><p>Our Hostess served us a very lovely supper to which we did full justice.</p><p>The next meeting will be held in the Fall.</p><p>Respectfully submitted </p><p>Beatrice Pinchuk, Sec'y. </p>"
+			"text": "<p>The second regular meeting of the Isaac and Celia Sklar Family Group was held at the home of Gussie and Willie on Father's Day, June 18th. The President, William opened the meeting at 5.15 P.M.  The entire family was present. Minutes of previous meeting were read and approved.</p><p>Under unfinished business, the subject of the Family Plot was brought up, and this was more fully explained by Louis, and details were to be worked out about buying same.</p><p>Sam discussed the paying of more dues per year, so that we may have more capital in the treasury if needed. This subject was tabled until Fall. </p><p>Motion was made by Louis that we have a prayer at the beginning of the meeting and also at closing, and that one of the Juniors past the age of 13 years, be selected as Chaplain.  A proper ritual to be composed and used at each meeting. A Chaplain to be appointed once a month.</p><p>A motion was made by Gussie, that we have a Happy day Fund for all happy occasion. Enthusiast— ically passed and the sum of $2.96 collected.</p><p>Under Good and welfare, Harriet suggested that we have some entertainment at each meeting, such as a Choral Group. This was tabled and a com— mittee consisting of Harriet, Gertrude and Bobby, are to be chairmen of Entertainment Committee. </p><p>Dues were collected and the sum of $23.00 was turned over to the Treasurer.</p><p>Our guest was Charles Sussman at this meeting.</p><p>Our Hostess served us a very lovely supper to which we did full justice.</p><p>The next meeting will be held in the Fall.</p><p>Respectfully submitted </p><p>Beatrice Pinchuk, Sec'y. </p>"
 		},
 		{
 			"date": "10-08-1939",
-			"images": [],
-			"text": "one more"
+			"images": [
+				"/images/10-08-1939.jpg",
+				"/images/10-08-1939-2.jpg"
+			],
+			"text": "<p>The third meeting of the Celia & Isaac Family Group was held at the home of Dorothy & Nat, at  5.30 P.M. with the Pres. William in the chair. Every member present with exception of Gertrude &  Lillian.</p><p>Minutes were read and approved. Buddy was Chaplain and read the opening prayer. Correspond—  ence was read and ordered filed. The expense for  flowers and cards sent to members for $4.78 was  ordered paid to secretary.</p><p>The President called on the members present  to give short talks on their activities since the  last meeting. Very interesting comments were made By Irving, Nat, Ann, Max, Louis, Dan, Sam, Sophie and Papa. President William gave an earnest talk about keeping together and to try to forget all differences,  that. we may have at any time, and that we may be  more closely knit as a family as time goes on. We  hope to continue this Group with the help of God  for many years to come and our children to continue  after us.</p><p>Emma suggested that she would like to make  a blessing at the table and then said a brief prayer.</p><p>Our host and hostess, assisted by their charming daughter Harriet, served a Dutch supper which was  very delicious.</p><p>Treasurer reported Balance on hand $32.12.</p><p>The next meeting will be held in November  and members will be notified.</p><p>Respectfully submitted</p><p>B. Pinchuk, sec'y.</p>"
+		},
+		{
+			"date": "11-26-1939",
+			"images": [
+				"/images/11-26-1939.jpg"
+			],
+			"text": "<p>The fourth regular meeting of the Isaac & Celia Sklar Family Group, was held at the home of Sophie and Louis. Meeting called to order at 5:30 P.M. by the Pres. William.</p><p>Dan and his family arrived after meeting as well as Max, being delayed by business. A short business meeting was held. Nothing of importance came up. Some interesting experiences were recout- ted by Nat, Ann and Morty. Pres. wished everyone suc— cess in their business for christmas. All committees reported progress. Congratulations were In order for Gussie and Willie on their 22nd. Anniversary, Lillians 15th. birthday, Ann's perennial 21st. birthday and Marilyn's recovery from illness.</p><p>Delicious sandwiches were served by hostess and a good time was had by all. The next meeting will be held at home of Irving Bea as soon as baby allows it.</p><p>Treasurer reported balance on hand $32.97</p><p>Respectfully submitted</p><p>B.Pinchuk, sec'y.</p>"
+		},
+		{
+			"date": "02-25-1940",
+			"images": [
+				"/images/02-25-1940.jpg"
+			],
+			"text": "<p>The fifth regular meeting of the I.&C. Sklar Family Group, was held at the home of Bea. & Irving.Meeting was called to order by the Pres. William who greeted all the members. Minutes were read and approved. Expenses of $4.92 were ordered paid after Louis made a motion which was carried.</p><p>Treasurers report was read and balance on hand was $33.30. Happy Day Fund of $2.25 was collected and respective members congratulated on the happy occasions.</p><p>Ann and Max suggested that an anniversary party and final meeting be held at their home and Ann promised a sumptuous supper at that time.</p><p>This suggestion was most enthusiastically received by members.</p><p>Bobby suggested a boat ride sometime during the summer and this will be discussed at the next meeting.</p><p>Refreshments were served and everyone did their bit and helped the hostess. Many thanks.</p><p>Respectfully submitted</p><p>Beatrice Pinchuk Sec'r.</p>"
 		}
 	],
 	"balances": {
@@ -43,12 +60,12 @@ export default {
 					"title": "Happy Day Fund:",
 					"data": {
 						"Nat & Dorothy's Anniv.": ".21",
-						"Irv. & Ben's     \" ": ".15",
+						"Irv. & Ben's Anniv. ": ".15",
 						"Milton's birthday": ".10",
-						"Max and Jay's     \" ": "1.00",
-						"Sam's             \" ": "1.00",
-						"Mama's            \" ": ".25",
-						"Dan & Hilda's     \" ": ".25"
+						"Max and Jay's birthday": "1.00",
+						"Sam's birthday": "1.00",
+						"Mama's birthday": ".25",
+						"Dan & Hilda's birthday": ".25"
 					},
 					"total": "$2.96"
 				},
@@ -63,7 +80,92 @@ export default {
 					"isexpense": true
 				}
 			],
-			"finalbalance": "$21.18"
+			"currentbalance": "$21.18"
+		},
+		"10-08-1939": {
+			"title": "Balance on hand 10/9/39---------------------$32.12",
+			"records": [
+				{
+					"title": "Dues collected  balance 1939/40",
+					"data": {
+						"William": "2.00",
+						"Dan": "2.00",
+						"Nat": "2.00",
+						"Irving": "3.00"
+					},
+					"total": "9.00"
+				},
+				{
+					"title": "Happy Day Fund:",
+					"data": {
+						"Charlotte's birthd.": ".13",
+						"Beatrices's birthd.": ".37",
+						"Barry's starting school": ".25",
+						"Myra's starting school": ".16",
+						"Marian's 9th.birthd.": ".18",
+						"Morty's cat": ".05",
+						"Sophie getting home well": ".40",
+						"Lillian's 15th. Birthd.": ".25"
+					},
+					"total": "1.94"
+				}
+			],
+			"previousbalance": "$21.18",
+			"currentbalance": "$32.12"
+		},
+		"11-26-1939": {
+			"title": "",
+			"records": [
+				{
+					"title": "Happy Day Fund:",
+					"data": {
+						"Gussie & Wm. Anniv. 22nd": ".25",
+						"Lillian's birthday": ".25",
+						"Ann's 21st. birthday": ".25",
+						"Marilyn's recovery": ".10"
+					},
+					"total": "$.85"
+				}
+			],
+			"previousbalance": "$32.12",
+			"currentbalance": "$32.97"
+		},
+		"02-25-1940": {
+			"title": "Balance on hand --------------------$33.30",
+			"records": [
+				{
+					"title": "Dues bal. 1939/40",
+					"data": {
+						"William": "1.00",
+						"Nat": "2.00"
+					},
+					"total": "$3.00"
+				},
+				{
+					"title": "Happy Day Fun:",
+					"data": {
+						"Harriet's Grad.": ".25",
+						"Nat's Birthday": ".25",
+						"Dorothy's Birthday": ".25",
+						"Irving's Birthday": ".25",
+						"Morton's Birthday": ".25",
+						"Martin's Birthday": ".25",
+						"Rip Jay's Dog": ".25",
+						"Max's store & Ann's love for Max": ".50"
+					},
+					"total": "$5.25"
+				},
+				{
+					"title": "",
+					"data": {
+						"Flowers for Bea. & Harriet postage": "-4.92"
+					},
+					"total": "$4.92",
+					"isexpense": true
+				}
+			],
+			"previousbalance": "$32.97",
+			"currentbalance": "$33.30"
 		}
 	}
 }

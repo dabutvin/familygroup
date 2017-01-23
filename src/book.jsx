@@ -51,7 +51,10 @@ class Book extends React.Component {
 					    							</div>
 				    							)
 			    							})}
-			    							<p className="text-right">Final balance: {Data.balances[page.date].finalbalance}</p>
+			    							{Data.balances[page.date].previousbalance &&
+			    								<p className="text-right">Previous balance: {Data.balances[page.date].previousbalance}</p>
+			    							}
+			    							<p className="text-right">Current balance: {Data.balances[page.date].currentbalance}</p>
 			    						</div>
 			    					</div>
 		    					</div>
