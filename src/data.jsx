@@ -91,6 +91,49 @@ export default {
 				"/images/04-19-1942-2.png"
 			],
 			"text": "<p>The twelfth regular meeting of the Isaac and Celia Sklar Family Group was held at the home of Ann and Max. President Nat called the meeting to order at 5:00 P.M. Minute of silence was observed as usual. Minutes of the previous meeting were read and there being no errors or omissions minutes stand approved.</p><p>Ann's parents and sister who were present, were welcomed by President and invited to attend our meeting.</p><p>Correspondence which consisted of a letter from Soldier Bobby was read and everyone was touched at the sentiment expressed. Also a telegram from Barry's Aunt congratulating him on his birthday.</p><p>Reference was made by President about the room for our meetings promised by Sam who explained that this will have to postponed for the duration.</p><p>Election of officers was tabled for the next meeting since this meeting is also a celebration of a few birthdays and anniversaries.</p><p>Announcements was made by Louis that on June 7th a Bar Mitzvah for Milton will be held at the same hall as Morty's was since Milton feels that what is good for one son is good for the other. Of course the entire family group is invited and invitation was also extended to the guests Mr. and Mrs. Kessler and Emily.</p><p>Under new business a picnic is planned for the last meeting which will be held sometime in June Max knows of a place. Forest Lodge, not far from Newark which seems ideal for picnicking and a full report will be rendered at the next meeting.</p><p>President Nat thanked Sophie and Louis for their kind hospitality at the Sedar and assured then of everyone's enjoyment and hoped we will be invited for many more Sedars. Sophie thanked the Group for flowers sent her. Thanks was received from Gertrude, Mama, Florence and Mary for corsages received on their birthdays and anniversaries.</p><p>Harriet not being present, she received her corsage by proxy. Happy birthday was sung by ever- yone for Barry's birthday and again for Mama and Gertrude and Florence on their birthdays. Also to Mary and Sam on their Anniversary.</p><p>Also received report that Bobby called from Mississippi and asked to be remembered to all. Everyone very happy about his new post and wish him the best of luck.</p><p>Happy Day Fund was collected for Mama's Gertrude, Florence, Harriet, Barry's birthdays, Mary and Sam Anniversary, Bobby's job in Army, Anniversary of Dan's store— Anniversary of Max's store, Max's Mother-in-law's birthday and for Kiskah. The sum of $4.47 was realized. Dues of $3.00 was also collected. Treasurers reported balance on hand $28.80. Expenses were $10.00 Bobby's gift, $.57 cards and stamps, $4.65 flowers and corsages.</p><p>Next meeting will be held at the home of Mary and Sam on May 10th, Mothers' s Day which is also the 3rd anniversary of the Group.</p><p>Meeting adjourned in a rush as we all know the delicious refreshments which Ann and Max always serve. They certainly didn't disappoint anyone from the Kiskah to the birthday cakes.</p><p>Respectfully submitted</p><p>Beatrice Pinchuk, Sec' r</p>"
+		},
+		{
+			"date": "05-10-1942",
+			"images": [
+				"/images/05-10-1942.jpg",
+			],
+			"text": "<p>May 10, l942</p><p>The thirteenth regular meeting of the Isaac & Celia Sklar Family Group was held at the home of Mary andSam on Mother's Day, May 10th and opened by President at 5:15 P.M.</p><p>Minute of silence was observed as usual.</p><p>Minutes of previous meeting were read and approved.</p><p>Ann thanked members for gifts presented to Barry on his birthday and Harriet also thanked everyone for her corsage and regretted not being present to receive it in person. Invitation was extended by Charlotte to attend her 16th birthday in August.</p><p>Plans for outing sometime in June will be completed if transportation facilities can be arranged. Committes consisting of Dan, Max and and Bea promised to attend to attend to all details.</p><p>Nomination and election of officers was the next order of business. Dan was unanimously elected as President, Sam as Vice President. Max as treasurer and Bea as secretart. Each officer graciously applouded by members and each promised to continue the good work.</p><p>Suggestion was made by Louis that on Fathers Day, we visit the Cemetery and plans will be made to do so.</p><p>There won't be meeting until the fall since in June we have Milton's Bar Mitzvah which promises to be an outstanding affair.</p><p>Happy Day fund was collected for various Mothers on this Mother's Day, also for splendid American Naval victory from Louis and for more successful celebrations from our host Sam. Sum of $2.80 was collected.</p><p>Dues for 1942 and 1943 were received and the sum of $19.00 was collected.</p><p>Balance on hand $53.65.</p><p>The next meeting will be held in the fall at the home of Bea and Irving.</p><p>Members decided to adjourn since we all know Sam's hobby of swell eats and between Mama's and Sam's cooking we were definetly not dissapointed.</p><p>Beatrice Pinchuk</p>"
+		},
+		{
+			"date": "11-26-1942",
+			"images": [
+				"/images/11-26-1942.jpg",
+				"/images/11-26-1942-2.jpg"
+			],
+			"text": "<p>Nov. 26, 1942</p><p>The fourteenth regular meeting of the Isaac and Celia Sklar Family Group was held at the home of Bea and Irving on Thanksgiving Day at 5:30 P.M. Meeting was opened by our new president Dan.</p><p>Minute of silence observed as usual.</p><p>President Dan made an opening address giving thanks for all being together, for Bobby's being home on leave and congratulated Gussie and Willie on their 25th anniversary and Bea and Irving on moving into their new home and wished them luck.</p><p>Max then excused himself and brought in a beautiful set of dishes as a gift from the Family Group to Gussie and Willie. Max once more excused himself and with some help brought in a gorgeous cocktail table from the Group to Bea and Irving for their new home. Recipients of the gifts were quite surprised but acceptedgifts with thanks and expressed appreciation for such outstanding gifts.</p><p>Louis also publicly congratulated Willie and Gussie but definitely disagrees about gifts presented to anyone in the name of the group unless all members know ofsame and approve. Quite a discussion followed and finally a motion was made by Louis that all gifts have approval of all members before being presented in the name of the group, seconded by Nat amd motion was passed by majority.</p><p>Bobby thanked the Group for gifts sent him and promised to take active part when he comes back. Was congratulated by President on behalf of Group on attaining rank of Corporal.</p><p>Sophie spoke about Louis's cousin who gave her new born son Papa's name for which we are proud and happy. Gift of a $25 War Bond was voted by Group to be sent to Baby. Willie made a motion that a letter and gift be sent to Baby on his birthday from the Group and be considered an honorary member.</p><p>Sophie was designated to send gift and letter to Baby's mother.</p><p>Congratulations were extended to Gert and Raymond on their 2nd anniversary and to Ann, Jay, Max, Gertrude, Lillian, Alan, Charlotte and Milton on their birthdays.Dan and Hilda on their Anniversary and to Bobby on being home and becoming a corporal. Happy Day Fund was collected for $6.04. Dues were collected from Dan, Louis and Irving and Willie for the amount of $15.00.</p><p>Refreshments were served which I hope were satisfactory. Next meeting at the home of Gussie and Willie.</p><p>Respectfully submitted</p><p>Beatrice Pinchuk</p>"
+		},
+		{
+			"date": "01-17-1943",
+			"images": [
+				"/images/01-17-1943.jpg"
+			],
+			"text": "<p>Januavy 17th. 1943.</p><p>The 15th. meeting of the I. & C. Sklar Family Group was held at, the home of Gussie and Willie. Meeting was called to order by our Pres. Dan at 6:00 P.M. The lateness of the hour was due to the fact that we deviated from the usual procedure of having refreshments served after the meeting and had a very delicioug dinner served by our Hostess and host before the meeting. This certainly pleased both young and old members and we all heartily enjoyed ourselves.</p><p>The customary minute of silence was observed.</p><p>Minutes of previous meeting were read and with one correction approved.</p><p>Pres. Dan congratulated Gussie and Willie on their beautiful new home, and on behalf of the Family Group and himself wished them all the luck and happiness. He recalled that their being next to the #2 School, brought back memories about being in school where the Armistice was signed and the excitement and happiness of everyone at the time.</p><p>Sophie reported receiving a letter from Louis' cousin who has named her baby for our beloved father, and acknowledged with thanks the gift of $25.00 War Bond sent to the baby from the Family Group. She wrote that the Baby's name is a direct derivation of the Jewish, which is Isaac Aaron Slutsky, and that she hopes that he grow to be as fine a person as his namesake.</p><p>Under new business the question arose about traveling to the various members homes as their turn comes for meetings. Bayonne was suggested as a centralized meeting place, but did not meet with the approval of most members. It was decided to continue for a while as previously. We still have Sam's promise of a regular meeting place when he builds a regular room in his basement.</p><p>Sophie thanked members for anniversary cards received.</p><p>Happy Day Fund was collected for the amount $3.10 and congratulations were extended to Sophie, Louis, Morty, Mama, Ann, Gertrude, Raymond, Sam, and again for Ann's delicious kishka which Max seems to love so much. $2.00 dues was collected.</p><p>Treasurer reported that deficit was taken care of by members who paid a tax. He reported a balance on hand of $5.21.</p><p>President then closed the meeting with a very appropriate prayer from the bible.</p><p>The next meeting will be held at the home of Sophie and Louis sometime in February.</p><p>Respectfully submitted</p><p>B. PINCHUK, Sec'y</p>"
+		},
+		{
+			"date": "02-21-1943",
+			"images": [
+				"/images/02-21-1943.jpg"
+			],
+			"text": "<p>February 21st. 1943</p><p>The 16th. regular meeting of the I. & C. Sklar Family Group was held at the home of Sophie & Louis on Sunday, Feb. 21st. and called to order by Pres. Dan at 5:00 P.M. Pres. Dan welcomed Cousin Harry Sklar, Captain in U.S. Army and his wife and child and cousin Elanor,who were guests at this meeting.</p><p>Minute of silence was observed as usual.</p><p>Minutes of previous meeting were read and approved.</p><p>Sam reported on having his basement renovated into a regular banquet hall and recreation room, and when completed it will more than fulfill our expections.</p><p>Sophie rendered a report on presenting a bouquet of flowers to Cousin Leona who became president, of the Jewish War Veterans Auxiliary, in as much as Mama, Louis, Sophie, Sam, Mary, Willie, Gussie, Irving and Bea were all present at the installation.</p><p>Willie made a timely suggestion that the brothers living out of town call Mama up at least once a week as she sometimes does not hear from them from one meeting until the next one. Nat, Dan and Max promised to do so.</p><p>Until the transportation problems are better adjusted, it was decided to have the next meeting in Bayonne, and Hilda and Dan be hosts.</p><p>Happy Day collected for Birthdays of Nat and Marilyn, for Gertrude's recovery etc. amount collected $3.15. Treasurer reported balance $8.36.</p><p>Meeting was adjourned for the regular Russian Dinner prepared and served by our Hosts, Sophie and Louis and the beans and knishes were certainly enjoyed by everyone.</p><p>Respectfully submitted</p><p>B. Pinchuk, Secy.</p>"
+		},
+		{
+			"date": "04-10-1943",
+			"images": [
+				"/images/04-10-1943.jpg"
+			],
+			"text": "<p>April 10, 1943</p><p>The 17th. meeting of the I. & C. Sklar Family Group was held at the home of Sam and Mary. Since this meeting was also held in honor of the Silver Anniversary of Sam and Mary, a gift of crystal stemware was presented to them by our Group with Pres. Dan making an appropriate speech to the recipients.</p><p>Meeting was called to order by Pres. Dan at 5:15 P. M. The customary minute of silence was observed.</p><p>Minutes of previous meeting were read and approved with correction made by Louis who believes that the head of the family should be mentioned first. Since this seems to be the opinion of the members, the correction was made.</p><p>Buddy who came in at this time was wlcomed by Pres. Dan who also welcomed Cousin Rose Sklar and T. Sg. Herbert Tick who was a guest of Sams at this meeting.</p><p>Pres. Dan thanked Sam for making available for our use, his beautiful Recreation Hall.</p><p>Under new business no plans for any outing or picnics will be made for the duration.</p><p>At this time Wm. extended to the Anniversary couple best wishes and long life and happiness and the same sentiments were expressed by Nat and Harriet. Gertrude spoke very touchingly to her parents and extended felicitations from herself, Raymond, Lil and Annold.</p><p>Motion made and unanimously carried that we continue to close meetings with a prayer and hereafter meetings will be closed in such manner by Pres. or host at each meeting</p><p>Happy Day Fund collected $4.53 and congratulations extended.</p><p>Treasurers report was balance on hand $8.50. The next meeting will held at the home of Nat & Dorothy sometime in May.</p><p>Meeting adjourned by Pres. with appropriate prayer. The refreshments were as usual delicious and full justice done them.</p><p>Respectfully submitted</p><p>B. Pinchuk, Sec'y.</p>"
+		},
+		{
+			"date": "06-25-1943",
+			"images": [
+				"/images/06-25-1943.jpg"
+			],
+			"text": "<p>June 25th. 1943</p><p>The 18th. meeting of the I. & C. Sklar Family Group was held in Berlin's recreation room with Dan and Hilda Hosts for this occasion. It was also the 15th. Anniversary of our hosts and we all joined in the festivities which were held. Since there were quite a number of guests present the regular procedure of the meeting was not observed, but at an informal meeting the following oficers were elected for 1943-1944: Pres. Max --- Vice Pres. Louis --- Treas. Sam. Secretary.Bea. The next meeting will be held in the fall at our newly elected  Pres. and wife Max and Ann.</p><p>Respectfully submitted</p><p>B. Pinchuk, secy.</p>"
 		}
 	],
 	"balances": {
@@ -220,6 +263,29 @@ export default {
 			],
 			"previousbalance": "$32.97",
 			"currentbalance": "$33.30"
+		},
+		"02-21-1943": {
+			"title": "",
+			"records": [
+			{
+				"title": "Happy Day Fund:",
+				"data": {
+					"(Sam) Gertrudes recovery": "1.00",
+					"(Ray) Moving back to own home": ".20",
+					"(Mama) Gert. Recovery": ".25",
+					"(Dan) For hacing a Sister Bea": ".25",
+					"(Max) For Ann's delicious Knishes": ".20",
+					" \"   \" Book deal": ".25",
+					" \"   \" Hopes for Hitler Shot": ".25",
+					"(Willie) Recapture of Birthplace by Russians": ".25",
+					"(Irv) for Marilyn's birthday": ".25",
+					"Nat for his birthday": ".25"
+				},
+				"total": "$3.15"
+			}
+			],
+			"previousbalance": "$5.21",
+			"currentbalance": "$8.36"
 		}
 	}
 }
