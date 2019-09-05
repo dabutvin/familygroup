@@ -56,6 +56,7 @@
       <v-container class="fill-height">
         <v-row justify="center" align="center">
           <v-col class="shrink">
+            <vue-markdown class="content" :source="rand"></vue-markdown>
             <v-tooltip right>
               <template v-slot:activator="{ on }">
                 <v-btn :href="source" icon large target="_blank" v-on="on">
@@ -86,11 +87,18 @@
 </template>
 
 <script>
+import VueMarkdown from "vue-markdown";
+import abc from "!raw-loader!../entries/abc.md";
+
 export default {
   props: {
     source: String
   },
+  components: {
+    VueMarkdown
+  },
   data: () => ({
+    rand: abc,
     drawer: null,
     items: [
       { text: "Most Popular" },
