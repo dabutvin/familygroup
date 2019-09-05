@@ -4,7 +4,7 @@
       <v-list dense>
         <v-list-item v-for="item in items" :key="item.text" @click>
           <v-list-item-action>
-            <v-icon large>mdi-file-document</v-icon>
+            <v-icon>mdi-file-document</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>{{ item.text }}</v-list-item-title>
@@ -34,11 +34,10 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="red" dense>
+    <v-app-bar app clipped-left color="blue" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-icon class="mx-4">fab fa-youtube</v-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">Youtube</span>
+        <span class="title">Isaac and Celia Sklar Family Group</span>
       </v-toolbar-title>
       <div class="flex-grow-1"></div>
       <v-row align="center" style="max-width: 650px">
@@ -46,7 +45,7 @@
           :append-icon-cb="() => {}"
           placeholder="Search..."
           single-line
-          append-icon="search"
+          append-icon="mdi-magnify"
           color="white"
           hide-details
         ></v-text-field>
