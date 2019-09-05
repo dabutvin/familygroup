@@ -55,30 +55,8 @@
     <v-content>
       <v-container class="fill-height">
         <v-row justify="center" align="center">
-          <v-col class="shrink">
+          <v-col>
             <vue-markdown class="content" :source="rand"></vue-markdown>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/aezMOO"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
           </v-col>
         </v-row>
       </v-container>
@@ -88,7 +66,7 @@
 
 <script>
 import VueMarkdown from "vue-markdown";
-import abc from "!raw-loader!../entries/abc.md";
+import entry from "!raw-loader!../entries/05-14-1939.md";
 
 export default {
   props: {
@@ -98,10 +76,10 @@ export default {
     VueMarkdown
   },
   data: () => ({
-    rand: abc,
+    rand: entry,
     drawer: null,
     items: [
-      { text: "Most Popular" },
+      { text: "May 14, 1939" },
       { text: "Subscriptions" },
       { text: "History" },
       { text: "Playlists" },
