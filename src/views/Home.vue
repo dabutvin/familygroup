@@ -2,15 +2,15 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.text" @click>
+        <v-list-item v-for="entry in entries" :key="entry.title" @click>
           <v-list-item-action>
             <v-icon>mdi-file-document</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
+            <v-list-item-title>{{ entry.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-subheader class="mt-4 grey--text text--darken-1">SUBSCRIPTIONS</v-subheader>
+        <v-subheader class="mt-4 grey--text text--darken-1">Family</v-subheader>
         <v-list>
           <v-list-item v-for="item in items2" :key="item.text" @click>
             <v-list-item-avatar>
@@ -56,7 +56,8 @@
       <v-container class="fill-height">
         <v-row justify="center" align="center">
           <v-col>
-            <vue-markdown class="content" :source="rand"></vue-markdown>
+            <h1>{{ entries[0].title }}</h1>
+            <vue-markdown class="content" :source="entries[0].text"></vue-markdown>
           </v-col>
         </v-row>
       </v-container>
@@ -66,7 +67,7 @@
 
 <script>
 import VueMarkdown from "vue-markdown";
-import entry from "!raw-loader!../entries/05-14-1939.md";
+import { entries } from "../entries";
 
 export default {
   props: {
@@ -76,15 +77,8 @@ export default {
     VueMarkdown
   },
   data: () => ({
-    rand: entry,
     drawer: null,
-    items: [
-      { text: "May 14, 1939" },
-      { text: "Subscriptions" },
-      { text: "History" },
-      { text: "Playlists" },
-      { text: "Watch Later" }
-    ],
+    entries: entries,
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
