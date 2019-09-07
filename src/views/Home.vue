@@ -2,14 +2,16 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item v-for="entry in entries" :key="entry.title" @click="active = entry.title">
-          <v-list-item-action>
-            <v-icon>mdi-file-document</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ entry.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-item-group v-model="active">
+          <v-list-item v-for="(entry, i) in entries" :key="i">
+            <v-list-item-action>
+              <v-icon>mdi-file-document</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ entry.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
         <v-subheader class="mt-4 grey--text text--darken-1">Family</v-subheader>
         <v-list>
           <v-list-item v-for="item in items2" :key="item.text" @click>
@@ -23,13 +25,13 @@
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-plus-circle-outline</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1">Browse Channels</v-list-item-title>
+          <v-list-item-title class="grey--text text--darken-1">Family Tree</v-list-item-title>
         </v-list-item>
         <v-list-item @click>
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-settings</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1">Manage Subscriptions</v-list-item-title>
+          <v-list-item-title class="grey--text text--darken-1">About</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -79,7 +81,7 @@ export default {
   data: () => ({
     drawer: null,
     entries: entries,
-    active: "May 14, 1939",
+    active: 0,
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
@@ -91,7 +93,8 @@ export default {
   computed: {
     activeEntry: function() {
       var vm = this;
-      return entries.find(entry => entry.title === vm.active);
+      //return entries.find(entry => entry.title === vm.active);
+      return entries[vm.active];
     }
   },
   created() {
