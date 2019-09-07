@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item v-for="entry in entries" :key="entry.title" @click>
+        <v-list-item v-for="entry in entries" :key="entry.title" @click="active = entry.title">
           <v-list-item-action>
             <v-icon>mdi-file-document</v-icon>
           </v-list-item-action>
@@ -56,8 +56,8 @@
       <v-container class="fill-height">
         <v-row justify="center" align="center">
           <v-col>
-            <h1>{{ entries[0].title }}</h1>
-            <vue-markdown class="content" :source="entries[0].text"></vue-markdown>
+            <h1>{{ activeEntry.title }}</h1>
+            <vue-markdown class="content" :source="activeEntry.text"></vue-markdown>
           </v-col>
         </v-row>
       </v-container>
@@ -79,6 +79,7 @@ export default {
   data: () => ({
     drawer: null,
     entries: entries,
+    active: "May 14, 1939",
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
@@ -87,6 +88,12 @@ export default {
       { picture: 78, text: "MKBHD" }
     ]
   }),
+  computed: {
+    activeEntry: function() {
+      var vm = this;
+      return entries.find(entry => entry.title === vm.active);
+    }
+  },
   created() {
     this.$vuetify.theme.dark = false;
   }
