@@ -2,14 +2,14 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-group sub-group v-for="year in years" :key="year">
+        <v-list-group sub-group v-for="year in years" :key="year" @click="setActiveYear(year)">
           <template v-slot:activator>
             <v-list-item-title>{{ year }}</v-list-item-title>
           </template>
           <v-list-item
             v-for="entry in entriesByYear(year)"
             :key="entry.id"
-            @click="setActiveEntry(entry.id)"
+            @click="setActiveYear(year)"
           >
             <v-list-item-action>
               <v-icon>mdi-file-document</v-icon>
@@ -68,14 +68,23 @@
     </v-app-bar>
 
     <v-content>
-      <v-container class="fill-height">
-        <v-row justify="center" align="center">
+      <v-card raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
+        <h1>{{ active }}</h1>
+      </v-card>
+      <v-card
+        raised="true"
+        class="mx-auto ma-5 pa-5"
+        width="700px"
+        v-for="entry in entriesByYear(active)"
+        :key="entry.id"
+      >
+        <v-row>
           <v-col>
-            <h1>{{ activeEntry.title }}</h1>
-            <vue-markdown class="content" :source="activeEntry.text"></vue-markdown>
+            <h2>{{ entry.title }}</h2>
+            <vue-markdown class="content" :source="entry.text"></vue-markdown>
           </v-col>
         </v-row>
-      </v-container>
+      </v-card>
     </v-content>
   </v-app>
 </template>
@@ -95,7 +104,7 @@ export default {
     drawer: null,
     entries: entries,
     years: [1939, 1940],
-    active: 0,
+    active: 1939,
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
@@ -104,18 +113,13 @@ export default {
       { picture: 78, text: "MKBHD" }
     ]
   }),
-  computed: {
-    activeEntry: function() {
-      var vm = this;
-      return entries[vm.active];
-    }
-  },
+  computed: {},
   methods: {
     entriesByYear: function(year) {
       return this.entries.filter(entry => entry.year === year);
     },
-    setActiveEntry: function(id) {
-      this.active = id;
+    setActiveYear: function(year) {
+      this.active = year;
     }
   },
   created() {
