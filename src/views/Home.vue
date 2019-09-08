@@ -7,12 +7,18 @@
             <v-list-item-title>{{ year }}</v-list-item-title>
           </template>
           <v-list-item
+            color="blue"
             v-for="entry in entriesByYear(year)"
             :key="entry.id"
             @click="setActiveYear(year, entry.id)"
           >
             <v-list-item-action>
-              <v-icon>mdi-file-document</v-icon>
+              <v-icon
+                color="blue"
+                v-if="scrolledPost === entry.id"
+                size="12"
+              >mdi-checkbox-blank-circle</v-icon>
+              <v-icon v-else size="12">mdi-checkbox-blank-circle-outline</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>{{ entry.title }}</v-list-item-title>
@@ -67,7 +73,7 @@
       </v-row>
     </v-app-bar>
 
-    <v-content>
+    <v-content v-scroll="scrolled">
       <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
         <h1>{{ active }}</h1>
       </v-card>
@@ -86,11 +92,15 @@
         </v-row>
       </v-card>
       <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
-        <v-btn text @click="setActiveYear(active - 1)">Previous</v-btn>
+        <v-btn class="float-left" text @click="setActiveYear(active - 1)">Previous</v-btn>
+        <v-btn class="float-right" text @click="setActiveYear(active + 1)">Next</v-btn>
         <h1>{{ active }}</h1>
-        <v-btn text @click="setActiveYear(active + 1)">Next</v-btn>
       </v-card>
     </v-content>
+    <v-footer class="py-8">
+      <div class="flex-grow-1"></div>
+      <div>Hello &copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
   </v-app>
 </template>
 
@@ -108,8 +118,9 @@ export default {
   data: () => ({
     drawer: null,
     entries: entries,
-    years: [1939, 1940],
+    years: [1939, 1940, 1941, 1942, 1943, 1944, 1945],
     active: 1939,
+    scrolledPost: 0,
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
@@ -124,12 +135,28 @@ export default {
       return this.entries.filter(entry => entry.year === year);
     },
     setActiveYear: function(year, id) {
-      if (this.active !== year) window.scrollTo(0, 0);
+      let duration = 400;
+      if (this.active !== year) {
+        //window.scrollTo(0, 0);
+        duration = 0;
+      }
       this.active = year;
       this.drawer = null;
       setTimeout(() => {
-        this.$vuetify.goTo(`#entry_${id}`);
-      }, 200);
+        this.$vuetify.goTo(`#entry_${id}`, {
+          duration: duration
+        });
+      }, 10);
+    },
+    scrolled: function(e) {
+      // debugger;
+      for (let i = this.entries.length - 1; i >= 0; i--) {
+        let entry = document.querySelector(`#entry_${i}`);
+        if (entry && entry.getBoundingClientRect().top < 50) {
+          this.scrolledPost = i;
+          break;
+        }
+      }
     }
   },
   created() {
