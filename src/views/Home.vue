@@ -2,15 +2,23 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-group sub-group v-for="year in years" :key="year">
+        <v-list-group
+          eager
+          sub-group
+          prepend-icon="mdi-google-circles-communities"
+          v-for="year in years"
+          v-model="year.active"
+          :key="year.text"
+          @click="setActiveYear(year.text)"
+        >
           <template v-slot:activator>
-            <v-list-item-title>{{ year }}</v-list-item-title>
+            <v-list-item-title>{{ year.text }}</v-list-item-title>
           </template>
           <v-list-item
             color="blue"
-            v-for="entry in entriesByYear(year)"
+            v-for="entry in entriesByYear(year.text)"
             :key="entry.id"
-            @click="setActiveYear(year, entry.id)"
+            @click="setActiveYear(year.text, entry.id)"
           >
             <v-list-item-action>
               <v-icon
@@ -74,27 +82,34 @@
     </v-app-bar>
 
     <v-content v-scroll="scrolled">
-      <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
-        <h1>{{ active }}</h1>
+      <v-card class="mx-auto ma-6 pa-6" max-width="800px">
+        <v-row align="center" justify="center">
+          <v-col cols="9">
+            <h1>{{ active }}</h1>
+          </v-col>
+        </v-row>
       </v-card>
       <v-card
-        :raised="true"
-        class="mx-auto ma-5 pa-5"
-        width="700px"
+        class="mx-auto ma-6 pa-6"
+        width="800px"
         v-for="entry in entriesByYear(active)"
         :key="entry.id"
       >
-        <v-row>
-          <v-col>
+        <v-row align="center" justify="center">
+          <v-col cols="9">
             <h2 :id="`entry_${entry.id}`">{{ entry.title }}</h2>
             <vue-markdown class="content" :source="entry.text"></vue-markdown>
           </v-col>
         </v-row>
       </v-card>
-      <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
-        <v-btn class="float-left" text @click="setActiveYear(active - 1)">Previous</v-btn>
-        <v-btn class="float-right" text @click="setActiveYear(active + 1)">Next</v-btn>
-        <h1>{{ active }}</h1>
+      <v-card class="mx-auto ma-6 pa-6" max-width="800px">
+        <v-row align="center" justify="center">
+          <v-col cols="9">
+            <v-btn class="float-left" text @click="goPrevious">Previous</v-btn>
+            <v-btn class="float-right" text @click="goNext">Next</v-btn>
+            <h1>{{ active }}</h1>
+          </v-col>
+        </v-row>
       </v-card>
     </v-content>
     <v-footer class="py-8">
@@ -118,9 +133,17 @@ export default {
   data: () => ({
     drawer: null,
     entries: entries,
-    years: [1939, 1940, 1941, 1942, 1943, 1944, 1945],
+    years: [
+      { text: 1939, active: true },
+      { text: 1940, active: false },
+      { text: 1941, active: false },
+      { text: 1942, active: false },
+      { text: 1943, active: false },
+      { text: 1944, active: false },
+      { text: 1945, active: false }
+    ],
     active: 1939,
-    scrolledPost: 0,
+    scrolledPost: undefined,
     items2: [
       { picture: 28, text: "Joseph" },
       { picture: 38, text: "Apple" },
@@ -137,19 +160,25 @@ export default {
     setActiveYear: function(year, id) {
       let duration = 400;
       if (this.active !== year) {
-        //window.scrollTo(0, 0);
         duration = 0;
+        for (let x of this.years) {
+          x.active = false;
+        }
       }
       this.active = year;
       this.drawer = null;
-      setTimeout(() => {
-        this.$vuetify.goTo(`#entry_${id}`, {
-          duration: duration
-        });
-      }, 10);
+      if (id != undefined) {
+        setTimeout(() => {
+          this.$vuetify.goTo(`#entry_${id}`, {
+            duration: duration
+          });
+        }, 10);
+      } else {
+        window.scrollTo(0, 0);
+        this.scrolledPost = undefined;
+      }
     },
     scrolled: function(e) {
-      // debugger;
       for (let i = this.entries.length - 1; i >= 0; i--) {
         let entry = document.querySelector(`#entry_${i}`);
         if (entry && entry.getBoundingClientRect().top < 50) {
@@ -157,6 +186,14 @@ export default {
           break;
         }
       }
+    },
+    goNext: function() {
+      this.setActiveYear(this.active + 1);
+      this.years.find(x => x.text === this.active).active = true;
+    },
+    goPrevious: function() {
+      this.setActiveYear(this.active - 1);
+      this.years.find(x => x.text === this.active).active = true;
     }
   },
   created() {
