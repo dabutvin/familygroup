@@ -177,6 +177,9 @@ export default {
         window.scrollTo(0, 0);
         this.scrolledPost = undefined;
       }
+      setTimeout(() => {
+        this.years.find(x => x.text === this.active).active = true;
+      }, 0);
     },
     scrolled: function(e) {
       for (let i = this.entries.length - 1; i >= 0; i--) {
