@@ -29,6 +29,12 @@
         </v-list-item>
         <v-list-item @click>
           <v-list-item-action>
+            <v-icon color="grey darken-1">mdi-image</v-icon>
+          </v-list-item-action>
+          <v-list-item-title class="grey--text text--darken-1">Photos</v-list-item-title>
+        </v-list-item>
+        <v-list-item @click>
+          <v-list-item-action>
             <v-icon color="grey darken-1">mdi-settings</v-icon>
           </v-list-item-action>
           <v-list-item-title class="grey--text text--darken-1">About</v-list-item-title>
@@ -36,7 +42,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="blue" dense>
+    <v-app-bar app clipped-left color="grey" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="mr-12 align-center">
         <span class="title">Isaac and Celia Sklar Family Group</span>
