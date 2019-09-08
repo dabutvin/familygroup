@@ -2,8 +2,15 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item-group v-model="active">
-          <v-list-item v-for="(entry, i) in entries" :key="i">
+        <v-list-group sub-group v-for="year in years" :key="year">
+          <template v-slot:activator>
+            <v-list-item-title>{{ year }}</v-list-item-title>
+          </template>
+          <v-list-item
+            v-for="entry in entriesByYear(year)"
+            :key="entry.id"
+            @click="setActiveEntry(entry.id)"
+          >
             <v-list-item-action>
               <v-icon>mdi-file-document</v-icon>
             </v-list-item-action>
@@ -11,7 +18,7 @@
               <v-list-item-title>{{ entry.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-        </v-list-item-group>
+        </v-list-group>
         <v-subheader class="mt-4 grey--text text--darken-1">Family</v-subheader>
         <v-list>
           <v-list-item v-for="item in items2" :key="item.text" @click>
@@ -87,6 +94,7 @@ export default {
   data: () => ({
     drawer: null,
     entries: entries,
+    years: [1939, 1940],
     active: 0,
     items2: [
       { picture: 28, text: "Joseph" },
@@ -99,8 +107,15 @@ export default {
   computed: {
     activeEntry: function() {
       var vm = this;
-      //return entries.find(entry => entry.title === vm.active);
       return entries[vm.active];
+    }
+  },
+  methods: {
+    entriesByYear: function(year) {
+      return this.entries.filter(entry => entry.year === year);
+    },
+    setActiveEntry: function(id) {
+      this.active = id;
     }
   },
   created() {
