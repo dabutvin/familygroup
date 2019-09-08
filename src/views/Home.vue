@@ -2,14 +2,14 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-group sub-group v-for="year in years" :key="year" @click="setActiveYear(year)">
+        <v-list-group sub-group v-for="year in years" :key="year">
           <template v-slot:activator>
             <v-list-item-title>{{ year }}</v-list-item-title>
           </template>
           <v-list-item
             v-for="entry in entriesByYear(year)"
             :key="entry.id"
-            @click="setActiveYear(year)"
+            @click="setActiveYear(year, entry.id)"
           >
             <v-list-item-action>
               <v-icon>mdi-file-document</v-icon>
@@ -68,11 +68,11 @@
     </v-app-bar>
 
     <v-content>
-      <v-card raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
+      <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
         <h1>{{ active }}</h1>
       </v-card>
       <v-card
-        raised="true"
+        :raised="true"
         class="mx-auto ma-5 pa-5"
         width="700px"
         v-for="entry in entriesByYear(active)"
@@ -80,10 +80,15 @@
       >
         <v-row>
           <v-col>
-            <h2>{{ entry.title }}</h2>
+            <h2 :id="`entry_${entry.id}`">{{ entry.title }}</h2>
             <vue-markdown class="content" :source="entry.text"></vue-markdown>
           </v-col>
         </v-row>
+      </v-card>
+      <v-card :raised="true" class="mx-auto ma-5 pa-5" max-width="700px">
+        <v-btn text @click="setActiveYear(active - 1)">Previous</v-btn>
+        <h1>{{ active }}</h1>
+        <v-btn text @click="setActiveYear(active + 1)">Next</v-btn>
       </v-card>
     </v-content>
   </v-app>
@@ -118,8 +123,13 @@ export default {
     entriesByYear: function(year) {
       return this.entries.filter(entry => entry.year === year);
     },
-    setActiveYear: function(year) {
+    setActiveYear: function(year, id) {
+      if (this.active !== year) window.scrollTo(0, 0);
       this.active = year;
+      this.drawer = null;
+      setTimeout(() => {
+        this.$vuetify.goTo(`#entry_${id}`);
+      }, 200);
     }
   },
   created() {
