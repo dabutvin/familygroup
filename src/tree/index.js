@@ -1,5 +1,5 @@
 const data = {
-  name: "Issac and Celia Sklar",
+  name: "Isaac and Celia Sklar",
   children: [
     {
       name: "Nathan",

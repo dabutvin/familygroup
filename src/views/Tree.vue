@@ -1,11 +1,11 @@
 <template>
   <div>
-    <organization-chart :datasource="ds" :pan="true" :zoom="true">
+    <organization-chart :datasource="ds" :pan="true" :zoom="false">
       <template slot-scope="{ nodeData }">
+        <img v-if="nodeData.img" :src="nodeData.img" />
+        <img v-else :src="defaultImg" />
         <div class="title">{{ nodeData.name }}</div>
         <div v-if="nodeData.years" class="content">
-          <img v-if="nodeData.img" :src="nodeData.img" />
-          <img v-else :src="defaultImg" />
           <span>{{ nodeData.years }}</span>
         </div>
       </template>

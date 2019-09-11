@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
         <v-list-group
