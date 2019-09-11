@@ -42,7 +42,7 @@
             <v-list-item-title v-text="item.text"></v-list-item-title>
           </v-list-item>
         </v-list>
-        <v-list-item class="mt-4" @click>
+        <v-list-item class="mt-4" to="/tree">
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-plus-circle-outline</v-icon>
           </v-list-item-action>
