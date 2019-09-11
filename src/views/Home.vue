@@ -1,5 +1,6 @@
 <template>
   <v-app id="inspire">
+    <img alt="Vue logo" src="../assets/logo.png" />
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
         <v-list-group
@@ -181,7 +182,7 @@ export default {
         this.years.find(x => x.text === this.active).active = true;
       }, 0);
     },
-    scrolled: function(e) {
+    scrolled: function() {
       for (let i = this.entries.length - 1; i >= 0; i--) {
         let entry = document.querySelector(`#entry_${i}`);
         if (entry && entry.getBoundingClientRect().top < 50) {
