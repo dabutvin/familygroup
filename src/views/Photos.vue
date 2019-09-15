@@ -4,7 +4,6 @@
     <div class="img-container">
       <img
         class="image"
-        loading="lazy"
         v-for="(image, imageIndex) in images"
         :key="imageIndex"
         @click="index = imageIndex"
