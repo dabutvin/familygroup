@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "thumbnail": "node thumbnails.js"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -26,6 +27,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
+    "image-thumbnail": "^1.0.4",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "prettier": "^1.18.2",
