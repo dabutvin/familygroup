@@ -27,174 +27,164 @@ export default {
   data: () => ({
     images: [
       {
-        title: "Someone and someone",
+        title: "First meeting notes",
         href: require("../photos/05-14-1939.jpg"),
         thumb: require("../photos/thumbs/05-14-1939.jpg")
       },
       {
-        title: "Someone and someone",
+        title: "First meeting notes (2)",
         href: require("../photos/05-14-1939-2.jpg"),
         thumb: require("../photos/thumbs/05-14-1939-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/a.jpg"),
-        thumb: require("../photos/thumbs/a.jpg")
+        title: "Isaac Sklar",
+        href: require("../photos/isaac-sklar.jpg"),
+        thumb: require("../photos/thumbs/isaac-sklar.jpg")
       },
       {
-        title: "Someone",
+        title: "Beatrice and Irving Pinchuk",
         href: require("../photos/mother-daddy.jpg"),
         thumb: require("../photos/thumbs/mother-daddy.jpg")
       },
       {
-        title: "Someone",
+        title: "Isaac and Celia Sklar",
         href: require("../photos/isaac-and-celia.jpg"),
         thumb: require("../photos/thumbs/isaac-and-celia.jpg")
       },
       {
-        title: "Beatrice and Irving",
+        title: "Beatrice and Irving Pinchuk",
         href: require("../photos/irving-and-mabeatty.jpg"),
         thumb: require("../photos/thumbs/irving-and-mabeatty.jpg")
       },
       {
-        title: "Someone",
+        title: "Jen Butvinik, Kathy Givler, Sophie Romberger",
         href: require("../photos/IMG_20151215_185559.jpg"),
         thumb: require("../photos/thumbs/IMG_20151215_185559.jpg")
       },
       {
-        title: "Someone",
+        title: "Charlotte Alban and Elizabeth Adams",
         href: require("../photos/charlotte-and-elizabeth.jpg"),
         thumb: require("../photos/thumbs/charlotte-and-elizabeth.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/b.jpg"),
-        thumb: require("../photos/thumbs/b.jpg")
+        title: "Beatrice and Irving Pinchuk",
+        href: require("../photos/bea-irving.jpg"),
+        thumb: require("../photos/thumbs/bea-irving.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/c.jpg"),
-        thumb: require("../photos/thumbs/c.jpg")
+        title: "Charlotte, baby Scott, Beatrice, and Celia",
+        href: require("../photos/charlotte-scott-bea-celia.jpg"),
+        thumb: require("../photos/thumbs/charlotte-scott-bea-celia.jpg")
       },
       {
-        title: "Someone",
+        title: "Marty",
         href: require("../photos/marty.jpg"),
         thumb: require("../photos/thumbs/marty.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/e.jpg"),
-        thumb: require("../photos/thumbs/e.jpg")
+        title: "Marilyn holding Karen",
+        href: require("../photos/marilyn-karen.jpg"),
+        thumb: require("../photos/thumbs/marilyn-karen.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/f.jpg"),
-        thumb: require("../photos/thumbs/f.jpg")
+        title: "Isaac and Celia Sklar",
+        href: require("../photos/isaac-celia-2.jpg"),
+        thumb: require("../photos/thumbs/isaac-celia-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/g.jpg"),
-        thumb: require("../photos/thumbs/g.jpg")
+        title: "Marty",
+        href: require("../photos/marty-2.jpg"),
+        thumb: require("../photos/thumbs/marty-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/h.jpg"),
-        thumb: require("../photos/thumbs/h.jpg")
+        title: "Warren Butvinik and Jen",
+        href: require("../photos/warren-jen.jpg"),
+        thumb: require("../photos/thumbs/warren-jen.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/i.jpg"),
-        thumb: require("../photos/thumbs/i.jpg")
+        title: "Marilyn and Fred Butvinik",
+        href: require("../photos/marilyn-fred.jpg"),
+        thumb: require("../photos/thumbs/marilyn-fred.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/j.jpg"),
-        thumb: require("../photos/thumbs/j.jpg")
+        title: "Cheryl",
+        href: require("../photos/cheryl.jpg"),
+        thumb: require("../photos/thumbs/cheryl.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/k.jpg"),
-        thumb: require("../photos/thumbs/k.jpg")
+        title: "Marilyn and Fred",
+        href: require("../photos/marilyn-fred-2.jpg"),
+        thumb: require("../photos/thumbs/marilyn-fred-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/l.jpg"),
-        thumb: require("../photos/thumbs/l.jpg")
+        title: "50th Anniversary party for Beatrice and Irving",
+        href: require("../photos/50th-anniversary.jpg"),
+        thumb: require("../photos/thumbs/50th-anniversary.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/m.jpg"),
-        thumb: require("../photos/thumbs/m.jpg")
+        title: "Marty, Jen, and Dan",
+        href: require("../photos/marty-jen-dan.jpg"),
+        thumb: require("../photos/thumbs/marty-jen-dan.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/n.jpg"),
-        thumb: require("../photos/thumbs/n.jpg")
+        title: "Warren's Bar Mitzvah",
+        href: require("../photos/warren-bar-mitzvah.jpg"),
+        thumb: require("../photos/thumbs/warren-bar-mitzvah.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/o.jpg"),
-        thumb: require("../photos/thumbs/o.jpg")
+        title: "Beatrice and Irving Pinchuk",
+        href: require("../photos/bea-irving-2.jpg"),
+        thumb: require("../photos/thumbs/bea-irving-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/o.jpg"),
-        thumb: require("../photos/thumbs/o.jpg")
+        title: "James, Warren, Dan, and Fred",
+        href: require("../photos/james-warren-dan-fred.jpg"),
+        thumb: require("../photos/thumbs/james-warren-dan-fred.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/p.jpg"),
-        thumb: require("../photos/thumbs/p.jpg")
+        title: "Marilyn and Fred Butvinik",
+        href: require("../photos/marilyn-fred-3.jpg"),
+        thumb: require("../photos/thumbs/marilyn-fred-3.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/q.jpg"),
-        thumb: require("../photos/thumbs/q.jpg")
+        title: "Warren, Cheryl, Bonnie",
+        href: require("../photos/warren-cheryl-bonnie.jpg"),
+        thumb: require("../photos/thumbs/warren-cheryl-bonnie.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/r.jpg"),
-        thumb: require("../photos/thumbs/r.jpg")
+        title: "James and Dan",
+        href: require("../photos/james-dan.jpg"),
+        thumb: require("../photos/thumbs/james-dan.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/s.jpg"),
-        thumb: require("../photos/thumbs/s.jpg")
+        title: "Cheryl",
+        href: require("../photos/cheryl-2.jpg"),
+        thumb: require("../photos/thumbs/cheryl-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/t.jpg"),
-        thumb: require("../photos/thumbs/t.jpg")
+        title: "Cheryl, James, Liz, Jim, Karen, Jen, Dan, and Kim",
+        href: require("../photos/cheryl-james-liz-jim-karen-jen-dan-kim.jpg"),
+        thumb: require("../photos/thumbs/cheryl-james-liz-jim-karen-jen-dan-kim.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/u.jpg"),
-        thumb: require("../photos/thumbs/u.jpg")
+        title: "Marilyn and Fred Butvinik",
+        href: require("../photos/marilyn-fred-4.jpg"),
+        thumb: require("../photos/thumbs/marilyn-fred-4.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/v.jpg"),
-        thumb: require("../photos/thumbs/v.jpg")
+        title: "Bonnie",
+        href: require("../photos/bonnie.jpg"),
+        thumb: require("../photos/thumbs/bonnie.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/w.jpg"),
-        thumb: require("../photos/thumbs/w.jpg")
+        title: "Bonnie",
+        href: require("../photos/bonnie-2.jpg"),
+        thumb: require("../photos/thumbs/bonnie-2.jpg")
       },
       {
-        title: "Someone",
-        href: require("../photos/x.jpg"),
-        thumb: require("../photos/thumbs/x.jpg")
-      },
-      {
-        title: "Someone",
-        href: require("../photos/y.jpg"),
-        thumb: require("../photos/thumbs/y.jpg")
-      },
-      {
-        title: "Someone",
-        href: require("../photos/z.jpg"),
-        thumb: require("../photos/thumbs/z.jpg")
+        title: "Cheryl",
+        href: require("../photos/cheryl-3.jpg"),
+        thumb: require("../photos/thumbs/cheryl-3.jpg")
       },
       {
         title: "Second meeting notes",
@@ -202,7 +192,7 @@ export default {
         thumb: require("../photos/thumbs/06-18-1939.jpg")
       },
       {
-        title: "Second meeting notes treasury",
+        title: "Second meeting notes (2)",
         href: require("../photos/06-18-1939-2.jpg"),
         thumb: require("../photos/thumbs/06-18-1939-2.jpg")
       }
