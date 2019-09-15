@@ -20,6 +20,11 @@ export default new Router({
       path: "/tree",
       name: "tree",
       component: () => import("./views/Tree.vue")
+    },
+    {
+      path: "/photos",
+      name: "photos",
+      component: () => import("./views/Photos.vue")
     }
   ],
   mode: "history"

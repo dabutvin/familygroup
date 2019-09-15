@@ -40,7 +40,7 @@
           </v-list-item-action>
           <v-list-item-title class="grey--text text--darken-1">Family Tree</v-list-item-title>
         </v-list-item>
-        <v-list-item @click>
+        <v-list-item to="/photos">
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-image</v-icon>
           </v-list-item-action>
@@ -58,7 +58,7 @@
     <v-app-bar app clipped-left color="white" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">Isaac and Celia Sklar Family Group</span>
+        <span class="title">The Isaac and Celia Sklar Family Group</span>
       </v-toolbar-title>
     </v-app-bar>
 
