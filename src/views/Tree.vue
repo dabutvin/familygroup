@@ -2,20 +2,13 @@
   <div>
     <organization-chart :datasource="ds" :pan="true" :zoom="false">
       <template slot-scope="{ nodeData }">
-        <img v-if="nodeData.img" :src="nodeData.img" />
-        <img v-else :src="defaultImg" />
-        <div class="title">{{ nodeData.name }}</div>
-        <div v-if="nodeData.years" class="content">
-          <span>{{ nodeData.years }}</span>
-        </div>
+        <div class="title" :title="nodeData.years">{{ nodeData.name }}</div>
       </template>
     </organization-chart>
   </div>
 </template>
-</template>
 
 <script>
-import Vue from "vue";
 import OrganizationChart from "vue-organization-chart";
 import "vue-organization-chart/dist/orgchart.css";
 import { data } from "../tree";
@@ -25,6 +18,13 @@ export default {
   components: {
     OrganizationChart
   },
+  mounted() {
+    var container = document.querySelector(".orgchart-container");
+    //container.scrollLeft = container.offsetWidth / 8;
+    //container.offsetWidth
+    //container.scrollLeft = window.innerWidth - container.offsetWidth / 2;
+    container.scrollLeft = (container.scrollWidth - container.offsetWidth) / 2;
+  },
   data() {
     return {
       defaultImg: defaultImg,
@@ -33,3 +33,31 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+.orgchart-container {
+  border: none;
+  height: 99vh;
+  width: 100%;
+
+  .orgchart {
+    //border: none;
+
+    .nodes {
+      .node {
+        width: 80px;
+
+        .title {
+          padding: 0 5px;
+        }
+      }
+
+      .lines {
+        .downLine {
+          //height: 15px;
+        }
+      }
+    }
+  }
+}
+</style>
