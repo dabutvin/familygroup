@@ -43,11 +43,6 @@ export default {
       },
       {
         title: "Someone",
-        href: require("../photos/b.jpg"),
-        thumb: require("../photos/thumbs/b.jpg")
-      },
-      {
-        title: "Someone",
         href: require("../photos/mother-daddy.jpg"),
         thumb: require("../photos/thumbs/mother-daddy.jpg")
       },
@@ -57,7 +52,7 @@ export default {
         thumb: require("../photos/thumbs/isaac-and-celia.jpg")
       },
       {
-        title: "Someone",
+        title: "Beatrice and Irving",
         href: require("../photos/irving-and-mabeatty.jpg"),
         thumb: require("../photos/thumbs/irving-and-mabeatty.jpg")
       },
@@ -68,8 +63,8 @@ export default {
       },
       {
         title: "Someone",
-        href: require("../photos/image-20161113_122224.jpg"),
-        thumb: require("../photos/thumbs/image-20161113_122224.jpg")
+        href: require("../photos/charlotte-and-elizabeth.jpg"),
+        thumb: require("../photos/thumbs/charlotte-and-elizabeth.jpg")
       },
       {
         title: "Someone",
@@ -83,8 +78,8 @@ export default {
       },
       {
         title: "Someone",
-        href: require("../photos/d.jpg"),
-        thumb: require("../photos/thumbs/d.jpg")
+        href: require("../photos/marty.jpg"),
+        thumb: require("../photos/thumbs/marty.jpg")
       },
       {
         title: "Someone",
@@ -200,10 +195,23 @@ export default {
         title: "Someone",
         href: require("../photos/z.jpg"),
         thumb: require("../photos/thumbs/z.jpg")
+      },
+      {
+        title: "Second meeting notes",
+        href: require("../photos/06-18-1939.jpg"),
+        thumb: require("../photos/thumbs/06-18-1939.jpg")
+      },
+      {
+        title: "Second meeting notes treasury",
+        href: require("../photos/06-18-1939-2.jpg"),
+        thumb: require("../photos/thumbs/06-18-1939-2.jpg")
       }
     ],
     index: null
-  })
+  }),
+  mounted() {
+    window.scrollTo(0, 0);
+  }
 };
 </script>
 
@@ -217,5 +225,6 @@ export default {
   margin: 0 1rem 1rem 0;
   display: inline-block;
   width: 100%;
+  cursor: pointer;
 }
 </style>

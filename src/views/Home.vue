@@ -78,7 +78,7 @@
       >
         <v-row align="center" justify="center">
           <v-col cols="9">
-            <h2 :id="`entry_${entry.id}`">{{ entry.title }}</h2>
+            <h2 :id="`entry_${entry.id}`" class="entry-title">{{ entry.title }}</h2>
             <vue-markdown class="content" :source="entry.text"></vue-markdown>
           </v-col>
         </v-row>
@@ -178,3 +178,14 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+.entry-title {
+  text-align: right;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 17px;
+  margin-bottom: 11px;
+  margin-right: -65px;
+}
+</style>

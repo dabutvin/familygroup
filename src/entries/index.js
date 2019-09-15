@@ -20,13 +20,13 @@ const entries = [
   {
     id: 0,
     year: 1939,
-    title: "May 14, 1939",
+    title: "Sunday - May 14, 1939",
     text: text_05_14_1939
   },
   {
     id: 1,
     year: 1939,
-    title: "June 18, 1939",
+    title: "Sunday June 18, 1939",
     text: text_06_18_1939
   },
   {
