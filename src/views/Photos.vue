@@ -1,13 +1,16 @@
 <template>
   <div>
     <gallery :images="images" :index="index" @close="index = null"></gallery>
-    <img
-      class="image"
-      v-for="(image, imageIndex) in images"
-      :key="imageIndex"
-      @click="index = imageIndex"
-      :src="image.thumb"
-    />
+    <div class="img-container">
+      <img
+        class="image"
+        loading="lazy"
+        v-for="(image, imageIndex) in images"
+        :key="imageIndex"
+        @click="index = imageIndex"
+        :src="image.thumb"
+      />
+    </div>
   </div>
 </template>
 <script>
@@ -204,3 +207,16 @@ export default {
   })
 };
 </script>
+
+<style lang="less" scoped>
+.img-container {
+  columns: 6 150px;
+  column-gap: 1rem;
+}
+
+.image {
+  margin: 0 1rem 1rem 0;
+  display: inline-block;
+  width: 100%;
+}
+</style>
