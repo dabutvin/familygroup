@@ -15,7 +15,7 @@
     "vue-gallery": "^2.0.0",
     "vue-organization-chart": "^1.1.6",
     "vue-router": "^3.0.3",
-    "vuetify": "^2.0.0"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@mdi/font": "^4.2.95",
