@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import "@fontsource/monomakh";
 import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
