@@ -1,13 +1,13 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar color="white" density="compact" :order="0">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+    <v-app-bar color="#1b2a4a" density="compact" :order="0">
+      <v-app-bar-nav-icon color="#f5f0e8" @click.stop="drawer = !drawer" />
       <v-toolbar-title class="mr-12 align-center">
-        <span class="text-h6">The Isaac and Celia Sklar Family Group</span>
+        <span class="app-bar-title">The Isaac and Celia Sklar Family Group</span>
       </v-toolbar-title>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" :order="1">
+    <v-navigation-drawer v-model="drawer" :order="1" color="#f5f0e8">
       <v-list density="compact" open-strategy="multiple" :opened="openedGroups">
         <v-list-group
           v-for="year in years"
@@ -18,7 +18,6 @@
           <template v-slot:activator="{ props }">
             <v-list-item
               v-bind="props"
-              prepend-icon="mdi-google-circles-communities"
               :title="String(year.text)"
               @click.stop="setActiveYear(year.text)"
             />
@@ -27,14 +26,14 @@
             v-for="entry in entriesByYear(year.text)"
             :key="entry.id"
             :title="entry.title"
-            color="blue"
+            color="#1b2a4a"
             :active="scrolledPost === entry.id"
             @click="setActiveYear(year.text, entry.id)"
           >
             <template v-slot:prepend>
               <v-icon
                 v-if="scrolledPost === entry.id"
-                color="blue"
+                color="#1b2a4a"
                 size="12"
                 icon="mdi-checkbox-blank-circle"
               />
@@ -48,41 +47,43 @@
         </v-list-group>
 
         <v-list-item
-          class="mt-4"
+          class="mt-6"
           to="/tree"
           prepend-icon="mdi-plus-circle-outline"
           title="Family Tree"
         />
         <v-list-item
+          class="mt-2"
           to="/photos"
           prepend-icon="mdi-image"
           title="Photos"
         />
-        <v-list-item prepend-icon="mdi-cog" title="About" />
+        <v-list-item class="mt-2" prepend-icon="mdi-cog" title="About" />
       </v-list>
     </v-navigation-drawer>
 
-    <v-main v-scroll="scrolled">
+    <v-main v-scroll="scrolled" class="beige-bg">
       <vue-easy-lightbox
         :visible="lightboxVisible"
         :imgs="lightboxImgs"
         :index="lightboxIndex"
         @hide="lightboxVisible = false"
       />
-      <v-card class="entry-card mx-auto ma-3 ma-sm-6 pa-4 pa-sm-6">
+      <div class="entry-section mx-auto px-4 px-sm-6 pt-4 pt-sm-6 pb-0">
         <div class="entry-layout">
           <div class="entry-text-col">
             <v-row align="center" justify="center">
               <v-col cols="12" sm="9">
-                <h1>{{ active }}</h1>
+                <h1 class="year-heading">{{ active }}</h1>
               </v-col>
             </v-row>
           </div>
+          <div class="entry-scan-col-spacer"></div>
         </div>
-      </v-card>
-      <v-card
+      </div>
+      <div
         :id="`entry_${entry.id}`"
-        class="entry-card mx-auto ma-3 ma-sm-6 pa-4 pa-sm-6"
+        class="entry-section mx-auto pa-4 pa-sm-6"
         v-for="entry in entriesByYear(active)"
         :key="entry.id"
       >
@@ -98,15 +99,19 @@
                   v-if="entryScans(entry.date).length"
                   class="scan-thumbs-row"
                 >
-                  <img
+                  <div
                     v-for="(scan, si) in entryScans(entry.date)"
                     :key="si"
-                    :src="scan.src"
-                    :alt="scan.label"
-                    :title="scan.label"
-                    class="scan-thumb"
-                    @click="openLightbox(entry.date, si)"
-                  />
+                    class="scan-matte"
+                  >
+                    <img
+                      :src="scan.src"
+                      :alt="scan.label"
+                      :title="scan.label"
+                      class="scan-thumb"
+                      @click="openLightbox(entry.date, si)"
+                    />
+                  </div>
                 </div>
               </v-col>
             </v-row>
@@ -115,20 +120,24 @@
             v-if="entryScans(entry.date).length"
             class="entry-scan-col"
           >
-            <img
+            <div
               v-for="(scan, si) in entryScans(entry.date)"
               :key="si"
-              :src="scan.src"
-              :alt="scan.label"
-              :title="scan.label"
-              class="scan-side-img"
-              @click="openLightbox(entry.date, si)"
-            />
+              class="scan-matte scan-matte--side"
+            >
+              <img
+                :src="scan.src"
+                :alt="scan.label"
+                :title="scan.label"
+                class="scan-side-img"
+                @click="openLightbox(entry.date, si)"
+              />
+            </div>
           </div>
         </div>
-      </v-card>
+      </div>
       <div class="mt-8"></div>
-      <v-card class="entry-card mx-auto ma-3 ma-sm-6 pa-4 pa-sm-6">
+      <div class="entry-section mx-auto pa-4 pa-sm-6">
         <div class="entry-layout">
           <div class="entry-text-col">
             <v-row align="center" justify="center">
@@ -139,17 +148,15 @@
                 <v-btn class="float-right" variant="text" @click="goNext">
                   Next
                 </v-btn>
-                <h1>{{ active }}</h1>
               </v-col>
             </v-row>
           </div>
         </div>
-      </v-card>
+      </div>
+      <footer class="site-footer">
+        Dedicated in memory to Marilyn Butvinik (2/14/1931 &ndash; 11/17/2025)
+      </footer>
     </v-main>
-    <v-footer class="py-8">
-      <div class="flex-grow-1"></div>
-      <div>Dedicated in memory to Marilyn Butvinik (2/14/1931 &ndash; 11/17/2025)</div>
-    </v-footer>
   </v-app>
 </template>
 
@@ -262,7 +269,11 @@ export default {
 </script>
 
 <style scoped>
-.entry-card {
+.beige-bg {
+  background-color: #f5f0e8 !important;
+}
+
+.entry-section {
   max-width: 800px;
 }
 
@@ -276,22 +287,45 @@ export default {
   min-width: 0;
 }
 
-.entry-scan-col {
+.entry-scan-col,
+.entry-scan-col-spacer {
   display: none;
   flex-shrink: 0;
   width: 450px;
   align-self: flex-start;
+}
+
+.entry-scan-col {
   position: sticky;
   top: 72px;
 }
 
+.scan-matte {
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  line-height: 0;
+}
+
+.scan-matte--side {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.scan-matte .scan-thumb,
+.scan-matte .scan-side-img {
+  border-radius: 4px;
+  display: block;
+}
+
 .scan-side-img {
   width: 100%;
-  border-radius: 4px;
   cursor: pointer;
   opacity: 0.9;
   transition: opacity 0.2s;
-  margin-bottom: 12px;
 }
 
 .scan-side-img:hover {
@@ -307,8 +341,6 @@ export default {
 
 .scan-thumb {
   height: 100px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
   cursor: pointer;
   opacity: 0.85;
   transition: opacity 0.2s;
@@ -319,11 +351,12 @@ export default {
 }
 
 @media (min-width: 1200px) {
-  .entry-card {
+  .entry-section {
     max-width: 1300px;
   }
 
-  .entry-scan-col {
+  .entry-scan-col,
+  .entry-scan-col-spacer {
     display: block;
   }
 
@@ -334,7 +367,7 @@ export default {
 
 .content :deep(p) {
   margin-bottom: 0.75em;
-  text-indent: 3.5em;
+  text-indent: 2em;
 }
 
 .content :deep(hr) {
@@ -348,7 +381,7 @@ export default {
   width: 100%;
   max-width: 380px;
   margin: 1em 0;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Courier Prime", "IBM Plex Mono", monospace;
   font-size: 0.9em;
 }
 
@@ -416,24 +449,74 @@ export default {
 }
 
 .entry-title {
-  text-align: right;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 17px;
-  margin-bottom: 11px;
+  text-align: left;
+  font-family: "Monomakh", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1.5em;
   margin-right: 0;
+}
+
+.year-heading {
+  font-family: "Monomakh", Georgia, serif;
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 0.04em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.app-bar-title {
+  font-family: "Monomakh", Georgia, serif;
+  font-size: 1.1rem;
+  color: #f5f0e8;
 }
 </style>
 
 <style>
 #inspire .v-navigation-drawer .v-list-item-title {
   font-size: 0.8125rem;
+  color: #333;
 }
 #inspire .v-navigation-drawer .v-list-item {
-  padding-inline-start: 8px !important;
+  padding-inline-start: 16px !important;
   padding-inline-end: 8px !important;
+  color: #333;
+}
+#inspire .v-navigation-drawer .v-list-item .v-icon {
+  color: #333;
+}
+#inspire .v-navigation-drawer .v-list-item > .v-list-item__prepend {
+  width: 32px !important;
+  margin-inline-end: 0 !important;
+  padding-inline-end: 0 !important;
+  gap: 0 !important;
+  flex: none !important;
+}
+#inspire .v-navigation-drawer .v-list-group__items .v-list-item > .v-list-item__prepend {
+  width: 20px !important;
 }
 #inspire .v-navigation-drawer .v-list-group__items .v-list-item {
-  padding-inline-start: 24px !important;
+  padding-inline-start: 32px !important;
+}
+#inspire .v-navigation-drawer .v-list-item--active {
+  background-color: #1b2a4a !important;
+  color: #f5f0e8 !important;
+}
+#inspire .v-navigation-drawer .v-list-item--active > .v-list-item__overlay {
+  opacity: 0 !important;
+}
+#inspire .v-navigation-drawer .v-list-item--active .v-list-item-title {
+  color: #f5f0e8 !important;
+}
+#inspire .v-navigation-drawer .v-list-item--active .v-icon {
+  color: #f5f0e8 !important;
+}
+.site-footer {
+  background-color: #1b2a4a;
+  color: #f5f0e8;
+  padding: 24px 16px;
+  width: 100%;
+  text-align: center;
 }
 </style>
