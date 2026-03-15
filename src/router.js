@@ -1,31 +1,32 @@
-import Vue from "vue";
-import Router from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "./views/Home.vue";
 
-Vue.use(Router);
+const routes = [
+  {
+    path: "/",
+    name: "home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: () => import("./views/About.vue"),
+  },
+  {
+    path: "/tree",
+    name: "tree",
+    component: () => import("./views/Tree.vue"),
+  },
+  {
+    path: "/photos",
+    name: "photos",
+    component: () => import("./views/Photos.vue"),
+  },
+];
 
-export default new Router({
-  routes: [
-    {
-      path: "/",
-      name: "home",
-      component: Home
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("./views/About.vue")
-    },
-    {
-      path: "/tree",
-      name: "tree",
-      component: () => import("./views/Tree.vue")
-    },
-    {
-      path: "/photos",
-      name: "photos",
-      component: () => import("./views/Photos.vue")
-    }
-  ],
-  mode: "history"
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
+
+export default router;

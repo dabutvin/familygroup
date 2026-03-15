@@ -1,29 +1,30 @@
 # familygroup
 
+The Isaac and Celia Sklar Family Group — a family history site with diary entries, a family tree, and photo gallery.
+
+Built with Vue 3, Vuetify 3, and Vite.
+
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Development server
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+### Production build
 ```
 npm run build
 ```
 
-### Run your tests
+### Preview production build
 ```
-npm run test
+npm run preview
 ```
 
-### Lints and fixes files
+### Lint
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

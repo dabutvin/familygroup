@@ -1,211 +1,132 @@
 <template>
   <div>
-    <gallery :images="images" :index="index" @close="index = null"></gallery>
+    <vue-easy-lightbox
+      :visible="visible"
+      :imgs="lightboxImgs"
+      :index="index"
+      @hide="visible = false"
+    />
     <div class="img-container">
       <img
         class="image"
         v-for="(image, imageIndex) in images"
         :key="imageIndex"
-        @click="index = imageIndex"
+        @click="showImg(imageIndex)"
         :src="image.thumb"
       />
     </div>
   </div>
 </template>
+
 <script>
-import VueGallery from "vue-gallery";
+import VueEasyLightbox from "vue-easy-lightbox";
+
+const photoFiles = import.meta.glob("../photos/*.jpg", {
+  eager: true,
+  import: "default",
+});
+const thumbFiles = import.meta.glob("../photos/thumbs/*.jpg", {
+  eager: true,
+  import: "default",
+});
+
+function photo(name) {
+  return photoFiles[`../photos/${name}`];
+}
+function thumb(name) {
+  return thumbFiles[`../photos/thumbs/${name}`];
+}
 
 export default {
   components: {
-    gallery: VueGallery
-  },
-  methods: {
-    onClick(i) {
-      this.index = i;
-    }
+    VueEasyLightbox,
   },
   data: () => ({
+    visible: false,
+    index: 0,
     images: [
-      {
-        title: "First meeting notes",
-        href: require("../photos/05-14-1939.jpg"),
-        thumb: require("../photos/thumbs/05-14-1939.jpg")
-      },
-      {
-        title: "First meeting notes (2)",
-        href: require("../photos/05-14-1939-2.jpg"),
-        thumb: require("../photos/thumbs/05-14-1939-2.jpg")
-      },
-      {
-        title: "Isaac Sklar",
-        href: require("../photos/isaac-sklar.jpg"),
-        thumb: require("../photos/thumbs/isaac-sklar.jpg")
-      },
+      { title: "First meeting notes", file: "05-14-1939.jpg" },
+      { title: "First meeting notes (2)", file: "05-14-1939-2.jpg" },
+      { title: "Isaac Sklar", file: "isaac-sklar.jpg" },
+      { title: "Beatrice and Irving Pinchuk", file: "mother-daddy.jpg" },
+      { title: "Isaac and Celia Sklar", file: "isaac-and-celia.jpg" },
       {
         title: "Beatrice and Irving Pinchuk",
-        href: require("../photos/mother-daddy.jpg"),
-        thumb: require("../photos/thumbs/mother-daddy.jpg")
-      },
-      {
-        title: "Isaac and Celia Sklar",
-        href: require("../photos/isaac-and-celia.jpg"),
-        thumb: require("../photos/thumbs/isaac-and-celia.jpg")
-      },
-      {
-        title: "Beatrice and Irving Pinchuk",
-        href: require("../photos/irving-and-mabeatty.jpg"),
-        thumb: require("../photos/thumbs/irving-and-mabeatty.jpg")
+        file: "irving-and-mabeatty.jpg",
       },
       {
         title: "Jen Butvinik, Kathy Givler, Sophie Romberger",
-        href: require("../photos/IMG_20151215_185559.jpg"),
-        thumb: require("../photos/thumbs/IMG_20151215_185559.jpg")
+        file: "IMG_20151215_185559.jpg",
       },
       {
         title: "Charlotte Alban and Elizabeth Adams",
-        href: require("../photos/charlotte-and-elizabeth.jpg"),
-        thumb: require("../photos/thumbs/charlotte-and-elizabeth.jpg")
+        file: "charlotte-and-elizabeth.jpg",
       },
-      {
-        title: "Beatrice and Irving Pinchuk",
-        href: require("../photos/bea-irving.jpg"),
-        thumb: require("../photos/thumbs/bea-irving.jpg")
-      },
+      { title: "Beatrice and Irving Pinchuk", file: "bea-irving.jpg" },
       {
         title: "Charlotte, baby Scott, Beatrice, and Celia",
-        href: require("../photos/charlotte-scott-bea-celia.jpg"),
-        thumb: require("../photos/thumbs/charlotte-scott-bea-celia.jpg")
+        file: "charlotte-scott-bea-celia.jpg",
       },
-      {
-        title: "Marty",
-        href: require("../photos/marty.jpg"),
-        thumb: require("../photos/thumbs/marty.jpg")
-      },
-      {
-        title: "Marilyn holding Karen",
-        href: require("../photos/marilyn-karen.jpg"),
-        thumb: require("../photos/thumbs/marilyn-karen.jpg")
-      },
-      {
-        title: "Isaac and Celia Sklar",
-        href: require("../photos/isaac-celia-2.jpg"),
-        thumb: require("../photos/thumbs/isaac-celia-2.jpg")
-      },
-      {
-        title: "Marty",
-        href: require("../photos/marty-2.jpg"),
-        thumb: require("../photos/thumbs/marty-2.jpg")
-      },
-      {
-        title: "Warren Butvinik and Jen",
-        href: require("../photos/warren-jen.jpg"),
-        thumb: require("../photos/thumbs/warren-jen.jpg")
-      },
-      {
-        title: "Marilyn and Fred Butvinik",
-        href: require("../photos/marilyn-fred.jpg"),
-        thumb: require("../photos/thumbs/marilyn-fred.jpg")
-      },
-      {
-        title: "Cheryl",
-        href: require("../photos/cheryl.jpg"),
-        thumb: require("../photos/thumbs/cheryl.jpg")
-      },
-      {
-        title: "Marilyn and Fred",
-        href: require("../photos/marilyn-fred-2.jpg"),
-        thumb: require("../photos/thumbs/marilyn-fred-2.jpg")
-      },
+      { title: "Marty", file: "marty.jpg" },
+      { title: "Marilyn holding Karen", file: "marilyn-karen.jpg" },
+      { title: "Isaac and Celia Sklar", file: "isaac-celia-2.jpg" },
+      { title: "Marty", file: "marty-2.jpg" },
+      { title: "Warren Butvinik and Jen", file: "warren-jen.jpg" },
+      { title: "Marilyn and Fred Butvinik", file: "marilyn-fred.jpg" },
+      { title: "Cheryl", file: "cheryl.jpg" },
+      { title: "Marilyn and Fred", file: "marilyn-fred-2.jpg" },
       {
         title: "50th Anniversary party for Beatrice and Irving",
-        href: require("../photos/50th-anniversary.jpg"),
-        thumb: require("../photos/thumbs/50th-anniversary.jpg")
+        file: "50th-anniversary.jpg",
       },
-      {
-        title: "Marty, Jen, and Dan",
-        href: require("../photos/marty-jen-dan.jpg"),
-        thumb: require("../photos/thumbs/marty-jen-dan.jpg")
-      },
-      {
-        title: "Warren's Bar Mitzvah",
-        href: require("../photos/warren-bar-mitzvah.jpg"),
-        thumb: require("../photos/thumbs/warren-bar-mitzvah.jpg")
-      },
-      {
-        title: "Beatrice and Irving Pinchuk",
-        href: require("../photos/bea-irving-2.jpg"),
-        thumb: require("../photos/thumbs/bea-irving-2.jpg")
-      },
+      { title: "Marty, Jen, and Dan", file: "marty-jen-dan.jpg" },
+      { title: "Warren's Bar Mitzvah", file: "warren-bar-mitzvah.jpg" },
+      { title: "Beatrice and Irving Pinchuk", file: "bea-irving-2.jpg" },
       {
         title: "James, Warren, Dan, and Fred",
-        href: require("../photos/james-warren-dan-fred.jpg"),
-        thumb: require("../photos/thumbs/james-warren-dan-fred.jpg")
+        file: "james-warren-dan-fred.jpg",
       },
-      {
-        title: "Marilyn and Fred Butvinik",
-        href: require("../photos/marilyn-fred-3.jpg"),
-        thumb: require("../photos/thumbs/marilyn-fred-3.jpg")
-      },
-      {
-        title: "Warren, Cheryl, Bonnie",
-        href: require("../photos/warren-cheryl-bonnie.jpg"),
-        thumb: require("../photos/thumbs/warren-cheryl-bonnie.jpg")
-      },
-      {
-        title: "James and Dan",
-        href: require("../photos/james-dan.jpg"),
-        thumb: require("../photos/thumbs/james-dan.jpg")
-      },
-      {
-        title: "Cheryl",
-        href: require("../photos/cheryl-2.jpg"),
-        thumb: require("../photos/thumbs/cheryl-2.jpg")
-      },
+      { title: "Marilyn and Fred Butvinik", file: "marilyn-fred-3.jpg" },
+      { title: "Warren, Cheryl, Bonnie", file: "warren-cheryl-bonnie.jpg" },
+      { title: "James and Dan", file: "james-dan.jpg" },
+      { title: "Cheryl", file: "cheryl-2.jpg" },
       {
         title: "Cheryl, James, Liz, Jim, Karen, Jen, Dan, and Kim",
-        href: require("../photos/cheryl-james-liz-jim-karen-jen-dan-kim.jpg"),
-        thumb: require("../photos/thumbs/cheryl-james-liz-jim-karen-jen-dan-kim.jpg")
+        file: "cheryl-james-liz-jim-karen-jen-dan-kim.jpg",
       },
-      {
-        title: "Marilyn and Fred Butvinik",
-        href: require("../photos/marilyn-fred-4.jpg"),
-        thumb: require("../photos/thumbs/marilyn-fred-4.jpg")
-      },
-      {
-        title: "Bonnie",
-        href: require("../photos/bonnie.jpg"),
-        thumb: require("../photos/thumbs/bonnie.jpg")
-      },
-      {
-        title: "Bonnie",
-        href: require("../photos/bonnie-2.jpg"),
-        thumb: require("../photos/thumbs/bonnie-2.jpg")
-      },
-      {
-        title: "Cheryl",
-        href: require("../photos/cheryl-3.jpg"),
-        thumb: require("../photos/thumbs/cheryl-3.jpg")
-      },
-      {
-        title: "Second meeting notes",
-        href: require("../photos/06-18-1939.jpg"),
-        thumb: require("../photos/thumbs/06-18-1939.jpg")
-      },
-      {
-        title: "Second meeting notes (2)",
-        href: require("../photos/06-18-1939-2.jpg"),
-        thumb: require("../photos/thumbs/06-18-1939-2.jpg")
-      }
-    ],
-    index: null
+      { title: "Marilyn and Fred Butvinik", file: "marilyn-fred-4.jpg" },
+      { title: "Bonnie", file: "bonnie.jpg" },
+      { title: "Bonnie", file: "bonnie-2.jpg" },
+      { title: "Cheryl", file: "cheryl-3.jpg" },
+      { title: "Second meeting notes", file: "06-18-1939.jpg" },
+      { title: "Second meeting notes (2)", file: "06-18-1939-2.jpg" },
+    ].map((img) => ({
+      ...img,
+      href: photo(img.file),
+      thumb: thumb(img.file),
+    })),
   }),
+  computed: {
+    lightboxImgs() {
+      return this.images.map((img) => ({
+        src: img.href,
+        title: img.title,
+      }));
+    },
+  },
+  methods: {
+    showImg(imageIndex) {
+      this.index = imageIndex;
+      this.visible = true;
+    },
+  },
   mounted() {
     window.scrollTo(0, 0);
-  }
+  },
 };
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .img-container {
   columns: 6 150px;
   column-gap: 1rem;
