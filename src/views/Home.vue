@@ -69,17 +69,32 @@
         :index="lightboxIndex"
         @hide="lightboxVisible = false"
       />
-      <div class="entry-section mx-auto px-4 px-sm-6 pt-4 pt-sm-6 pb-0">
-        <div class="entry-layout">
-          <div class="entry-text-col">
-            <v-row align="center" justify="center">
-              <v-col cols="12" sm="9">
-                <h1 class="year-heading">{{ active }}</h1>
-              </v-col>
-            </v-row>
+      <div class="year-masthead">
+        <div class="masthead-rule masthead-rule--top"></div>
+        <div class="masthead-content">
+          <div
+            v-for="(h, hi) in yearHeadlines(active)"
+            :key="hi"
+            class="masthead-headline"
+            :style="h.style"
+            aria-hidden="true"
+          >
+            {{ h.text }}
           </div>
-          <div class="entry-scan-col-spacer"></div>
+          <div class="entry-section mx-auto px-4 px-sm-6">
+            <div class="entry-layout">
+              <div class="entry-text-col">
+                <v-row align="center" justify="center">
+                  <v-col cols="12" sm="9">
+                    <h1 class="year-heading">{{ active }}</h1>
+                  </v-col>
+                </v-row>
+              </div>
+              <div class="entry-scan-col-spacer"></div>
+            </div>
+          </div>
         </div>
+        <div class="masthead-rule masthead-rule--bottom"></div>
       </div>
       <div
         :id="`entry_${entry.id}`"
@@ -214,6 +229,96 @@ export default {
     },
     entriesByYear(year) {
       return this.entries.filter((entry) => entry.year === year);
+    },
+    yearHeadlines(year) {
+      const all = {
+        1939: [
+          "World's Fair Opens in New York",
+          "Germany Invades Poland",
+          "Gone With the Wind Premieres",
+          "Einstein Warns Roosevelt on Atomic Bomb",
+          "Lou Gehrig Bids Farewell",
+        ],
+        1940: [
+          "Roosevelt Wins Third Term",
+          "Blitz Rains Fire on London",
+          "Selective Service Act Signed",
+          "Fantasia Opens in Theaters",
+          "Hemingway Publishes Bell Tolls",
+        ],
+        1941: [
+          "Pearl Harbor Attacked",
+          "United States Enters the War",
+          "Lend-Lease Act Signed",
+          "Joe DiMaggio's 56-Game Streak",
+          "Citizen Kane Released",
+        ],
+        1942: [
+          "Rationing Begins Across Nation",
+          "Battle of Midway Turns the Tide",
+          "Casablanca Premieres",
+          "Women Enter the Workforce",
+          "Voice of America Goes on Air",
+        ],
+        1943: [
+          "Allies Invade Sicily",
+          "Mussolini Overthrown",
+          "Zoot Suit Riots in Los Angeles",
+          "Pentagon Building Completed",
+          "Oklahoma! Opens on Broadway",
+        ],
+        1944: [
+          "Allied Forces Storm Normandy",
+          "Paris Liberated",
+          "GI Bill Signed Into Law",
+          "Eisenhower Leads D-Day Invasion",
+          "Smokey Bear Campaign Begins",
+        ],
+        1945: [
+          "Victory in Europe!",
+          "War Is Over!",
+          "United Nations Charter Signed",
+          "Atomic Bomb Dropped on Hiroshima",
+          "Troops Come Home at Last",
+        ],
+        1946: [
+          "United Nations Holds First Session",
+          "Baby Boom Sweeps the Nation",
+          "Nuremberg Verdicts Delivered",
+          "It's a Wonderful Life Opens",
+          "ENIAC Computer Unveiled",
+        ],
+        1947: [
+          "Jackie Robinson Breaks Color Barrier",
+          "Marshall Plan Announced",
+          "Dead Sea Scrolls Discovered",
+          "India Gains Independence",
+          "A Streetcar Named Desire Opens",
+        ],
+        1948: [
+          "State of Israel Proclaimed",
+          "Truman Wins in Stunning Upset",
+          "Berlin Airlift Begins",
+          "NHS Founded in Britain",
+          "Polaroid Camera Goes on Sale",
+        ],
+      };
+      const layouts = [
+        { top: "8%",  left: "2%",  rotate: -6,  size: 1.4 },
+        { top: "62%", left: "55%", rotate: 4,   size: 1.1 },
+        { top: "15%", left: "58%", rotate: -10,  size: 1.7 },
+        { top: "70%", left: "5%",  rotate: 7,   size: 1.0 },
+        { top: "38%", left: "35%", rotate: -3,  size: 1.3 },
+      ];
+      return (all[year] || []).map((text, i) => ({
+        text,
+        style: {
+          top: layouts[i].top,
+          left: layouts[i].left,
+          transform: `rotate(${layouts[i].rotate}deg)`,
+          fontSize: `${layouts[i].size}rem`,
+        },
+      }));
     },
     entryScans(date) {
       return getCachedScans(date);
@@ -457,13 +562,60 @@ export default {
   margin-right: 0;
 }
 
+.year-masthead {
+  text-align: left;
+  padding: 1.5em 1em 0;
+  width: 100%;
+}
+
+.masthead-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead-headline {
+  position: absolute;
+  font-family: "Monomakh", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1b2a4a;
+  opacity: 0.06;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.masthead-rule {
+  height: 0;
+  border: none;
+  margin: 0 auto;
+}
+
+.masthead-rule--top {
+  border-top: 3px double #1b2a4a;
+  border-bottom: 1px solid #1b2a4a;
+  height: 5px;
+  margin-bottom: 0.4em;
+}
+
+.masthead-rule--bottom {
+  border-top: 1px solid #1b2a4a;
+  border-bottom: 3px double #1b2a4a;
+  height: 5px;
+  margin-top: 0.3em;
+}
+
 .year-heading {
   font-family: "Monomakh", Georgia, serif;
   font-weight: 700;
   font-size: 4rem;
   letter-spacing: 0.04em;
   text-align: left;
-  margin-bottom: 0;
+  margin: 0.4em 0;
+  line-height: 1;
+  color: #1b2a4a;
 }
 
 .app-bar-title {
