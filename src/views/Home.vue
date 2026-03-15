@@ -71,6 +71,7 @@
         </v-row>
       </v-card>
       <v-card
+        :id="`entry_${entry.id}`"
         class="mx-auto ma-3 ma-sm-6 pa-4 pa-sm-6"
         max-width="800px"
         v-for="entry in entriesByYear(active)"
@@ -78,13 +79,14 @@
       >
         <v-row align="center" justify="center">
           <v-col cols="12" sm="9">
-            <h2 :id="`entry_${entry.id}`" class="entry-title">
+            <h2 class="entry-title">
               {{ entry.title }}
             </h2>
             <div class="content" v-html="renderMarkdown(entry.text)"></div>
           </v-col>
         </v-row>
       </v-card>
+      <div class="mt-8"></div>
       <v-card class="mx-auto ma-3 ma-sm-6 pa-4 pa-sm-6" max-width="800px">
         <v-row align="center" justify="center">
           <v-col cols="12" sm="9">
@@ -101,7 +103,7 @@
     </v-main>
     <v-footer class="py-8">
       <div class="flex-grow-1"></div>
-      <div>Hello &copy; {{ new Date().getFullYear() }}</div>
+      <div>Dedicated in memory to Marilyn Butvinik (2/14/1931 &ndash; 11/17/2025)</div>
     </v-footer>
   </v-app>
 </template>
@@ -166,13 +168,14 @@ export default {
         });
       } else {
         window.scrollTo(0, 0);
-        this.scrolledPost = undefined;
+        const firstEntry = this.entriesByYear(year)[0];
+        this.scrolledPost = firstEntry ? firstEntry.id : undefined;
       }
     },
     scrolled() {
       for (let i = this.entries.length - 1; i >= 0; i--) {
         let entry = document.querySelector(`#entry_${i}`);
-        if (entry && entry.getBoundingClientRect().top < 50) {
+        if (entry && entry.getBoundingClientRect().top < 75) {
           this.scrolledPost = i;
           break;
         }
