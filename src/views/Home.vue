@@ -159,7 +159,7 @@ import VueEasyLightbox from "vue-easy-lightbox";
 import { entries } from "../entries";
 import { getScans } from "../entries/scans";
 
-const md = new MarkdownIt();
+const md = new MarkdownIt({ html: true });
 
 const scanCache = {};
 function getCachedScans(date) {
@@ -335,6 +335,84 @@ export default {
 .content :deep(p) {
   margin-bottom: 0.75em;
   text-indent: 3.5em;
+}
+
+.content :deep(hr) {
+  margin: 2em 0;
+}
+
+/* shared table base */
+.content :deep(table) {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  max-width: 380px;
+  margin: 1em 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9em;
+}
+
+.content :deep(table thead),
+.content :deep(table tbody) {
+  display: block;
+}
+
+.content :deep(table tr) {
+  display: flex;
+  align-items: baseline;
+  border: none;
+  background: none;
+}
+
+.content :deep(table th),
+.content :deep(table td) {
+  border: none;
+  padding: 2px 0;
+  background: none;
+  white-space: nowrap;
+  font-weight: normal;
+  text-align: left;
+}
+
+.content :deep(table thead th:first-child) {
+  font-weight: bold;
+}
+
+.content :deep(table thead th:last-child:not(:first-child)) {
+  display: none;
+}
+
+.content :deep(table td:first-child) {
+  display: flex;
+  align-items: baseline;
+  flex: 1;
+  min-width: 0;
+}
+
+.content :deep(table td:last-child) {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* table-dashed: dash leaders between columns */
+.content :deep(.table-dashed table thead tr) {
+  border-bottom: 2px dashed #999;
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+
+.content :deep(.table-dashed table td:first-child)::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px dashed #999;
+  margin: 0 2px;
+  min-width: 8px;
+  position: relative;
+  top: -2px;
+}
+
+.content :deep(.table-no-header table thead) {
+  display: none;
 }
 
 .entry-title {
