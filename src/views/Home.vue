@@ -69,17 +69,32 @@
         :index="lightboxIndex"
         @hide="lightboxVisible = false"
       />
-      <div class="entry-section mx-auto px-4 px-sm-6 pt-4 pt-sm-6 pb-0">
-        <div class="entry-layout">
-          <div class="entry-text-col">
-            <v-row align="center" justify="center">
-              <v-col cols="12" sm="9">
-                <h1 class="year-heading">{{ active }}</h1>
-              </v-col>
-            </v-row>
+      <div class="year-masthead">
+        <div class="masthead-rule masthead-rule--top"></div>
+        <div class="masthead-content">
+          <div
+            v-for="(h, hi) in yearHeadlines(active)"
+            :key="hi"
+            class="masthead-headline"
+            :style="h.style"
+            aria-hidden="true"
+          >
+            {{ h.text }}
           </div>
-          <div class="entry-scan-col-spacer"></div>
+          <div class="entry-section mx-auto px-4 px-sm-6">
+            <div class="entry-layout">
+              <div class="entry-text-col">
+                <v-row align="center" justify="center">
+                  <v-col cols="12" sm="9">
+                    <h1 class="year-heading">{{ active }}</h1>
+                  </v-col>
+                </v-row>
+              </div>
+              <div class="entry-scan-col-spacer"></div>
+            </div>
+          </div>
         </div>
+        <div class="masthead-rule masthead-rule--bottom"></div>
       </div>
       <div
         :id="`entry_${entry.id}`"
@@ -214,6 +229,90 @@ export default {
     },
     entriesByYear(year) {
       return this.entries.filter((entry) => entry.year === year);
+    },
+    yearHeadlines(year) {
+      const data = {
+        1939: [
+          { text: "World's Fair Opens in New York", top: "5%", left: "3%", rotate: -4, size: 1.5 },
+          { text: "Germany Invades Poland", top: "22%", left: "52%", rotate: 7, size: 2.0 },
+          { text: "Gone With the Wind Premieres", top: "58%", left: "8%", rotate: -9, size: 1.1 },
+          { text: "Lou Gehrig Bids Farewell", top: "72%", left: "42%", rotate: 3, size: 1.3 },
+        ],
+        1940: [
+          { text: "Roosevelt Wins Third Term", top: "10%", left: "40%", rotate: -7, size: 1.8 },
+          { text: "Blitz Rains Fire on London", top: "35%", left: "1%", rotate: 5, size: 1.2 },
+          { text: "Selective Service Act Signed", top: "60%", left: "30%", rotate: -2, size: 1.5 },
+          { text: "Fantasia Opens in Theaters", top: "5%", left: "5%", rotate: 11, size: 0.9 },
+          { text: "Hemingway Publishes Bell Tolls", top: "78%", left: "50%", rotate: -6, size: 1.0 },
+          { text: "Census Counts 132 Million", top: "48%", left: "60%", rotate: 8, size: 1.4 },
+        ],
+        1941: [
+          { text: "Pearl Harbor Attacked", top: "12%", left: "25%", rotate: -3, size: 2.4 },
+          { text: "United States Enters the War", top: "55%", left: "5%", rotate: 6, size: 1.6 },
+          { text: "Lend-Lease Act Signed", top: "75%", left: "48%", rotate: -8, size: 1.1 },
+        ],
+        1942: [
+          { text: "Rationing Begins Across Nation", top: "6%", left: "10%", rotate: 5, size: 1.3 },
+          { text: "Battle of Midway Turns the Tide", top: "30%", left: "45%", rotate: -11, size: 1.7 },
+          { text: "Casablanca Premieres", top: "65%", left: "2%", rotate: 3, size: 1.0 },
+          { text: "Women Enter the Workforce", top: "50%", left: "55%", rotate: -5, size: 1.5 },
+          { text: "Voice of America Goes on Air", top: "80%", left: "30%", rotate: 9, size: 0.9 },
+        ],
+        1943: [
+          { text: "Allies Invade Sicily", top: "8%", left: "50%", rotate: -6, size: 1.9 },
+          { text: "Mussolini Overthrown", top: "40%", left: "3%", rotate: 10, size: 1.2 },
+          { text: "Zoot Suit Riots in Los Angeles", top: "68%", left: "35%", rotate: -4, size: 1.4 },
+          { text: "Pentagon Building Completed", top: "25%", left: "30%", rotate: 7, size: 1.0 },
+          { text: "Oklahoma! Opens on Broadway", top: "75%", left: "60%", rotate: -12, size: 0.95 },
+          { text: "Allies Bomb Hamburg", top: "52%", left: "58%", rotate: 2, size: 1.6 },
+          { text: "Race Riots Erupt in Detroit", top: "15%", left: "5%", rotate: -8, size: 1.1 },
+        ],
+        1944: [
+          { text: "Allied Forces Storm Normandy", top: "8%", left: "15%", rotate: -5, size: 2.2 },
+          { text: "Paris Liberated", top: "45%", left: "55%", rotate: 8, size: 1.8 },
+          { text: "GI Bill Signed Into Law", top: "70%", left: "8%", rotate: -3, size: 1.1 },
+          { text: "Smokey Bear Campaign Begins", top: "30%", left: "2%", rotate: 6, size: 0.95 },
+        ],
+        1945: [
+          { text: "Victory in Europe!", top: "5%", left: "35%", rotate: -4, size: 2.5 },
+          { text: "War Is Over!", top: "38%", left: "5%", rotate: 9, size: 2.0 },
+          { text: "United Nations Charter Signed", top: "62%", left: "40%", rotate: -7, size: 1.3 },
+          { text: "Atomic Bomb Dropped on Hiroshima", top: "25%", left: "50%", rotate: 3, size: 1.1 },
+          { text: "Troops Come Home at Last", top: "78%", left: "15%", rotate: -11, size: 1.5 },
+          { text: "FDR Dies in Office", top: "50%", left: "62%", rotate: 6, size: 1.7 },
+        ],
+        1946: [
+          { text: "United Nations Holds First Session", top: "10%", left: "20%", rotate: 4, size: 1.6 },
+          { text: "Baby Boom Sweeps the Nation", top: "42%", left: "50%", rotate: -9, size: 1.3 },
+          { text: "Nuremberg Verdicts Delivered", top: "70%", left: "5%", rotate: 6, size: 1.8 },
+          { text: "It's a Wonderful Life Opens", top: "28%", left: "2%", rotate: -3, size: 1.0 },
+          { text: "ENIAC Computer Unveiled", top: "75%", left: "55%", rotate: 11, size: 0.9 },
+        ],
+        1947: [
+          { text: "Jackie Robinson Breaks Color Barrier", top: "8%", left: "8%", rotate: -6, size: 2.1 },
+          { text: "Marshall Plan Announced", top: "50%", left: "45%", rotate: 5, size: 1.4 },
+          { text: "Dead Sea Scrolls Discovered", top: "30%", left: "55%", rotate: -10, size: 1.0 },
+          { text: "India Gains Independence", top: "68%", left: "10%", rotate: 8, size: 1.6 },
+        ],
+        1948: [
+          { text: "State of Israel Proclaimed", top: "12%", left: "30%", rotate: -5, size: 2.3 },
+          { text: "Truman Wins in Stunning Upset", top: "45%", left: "3%", rotate: 7, size: 1.5 },
+          { text: "Berlin Airlift Begins", top: "65%", left: "50%", rotate: -9, size: 1.8 },
+          { text: "NHS Founded in Britain", top: "78%", left: "20%", rotate: 4, size: 0.95 },
+          { text: "Polaroid Camera Goes on Sale", top: "25%", left: "58%", rotate: 11, size: 1.1 },
+          { text: "Babe Ruth Dies", top: "5%", left: "2%", rotate: -3, size: 1.3 },
+          { text: "Kinsey Report Published", top: "55%", left: "35%", rotate: -7, size: 1.0 },
+        ],
+      };
+      return (data[year] || []).map((h) => ({
+        text: h.text,
+        style: {
+          top: h.top,
+          left: h.left,
+          transform: `rotate(${h.rotate}deg)`,
+          fontSize: `${h.size}rem`,
+        },
+      }));
     },
     entryScans(date) {
       return getCachedScans(date);
@@ -457,13 +556,60 @@ export default {
   margin-right: 0;
 }
 
+.year-masthead {
+  text-align: left;
+  padding: 1.5em 1em 0;
+  width: 100%;
+}
+
+.masthead-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.masthead-headline {
+  position: absolute;
+  font-family: "Monomakh", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1b2a4a;
+  opacity: 0.06;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.masthead-rule {
+  height: 0;
+  border: none;
+  margin: 0 auto;
+}
+
+.masthead-rule--top {
+  border-top: 3px double #1b2a4a;
+  border-bottom: 1px solid #1b2a4a;
+  height: 5px;
+  margin-bottom: 0.4em;
+}
+
+.masthead-rule--bottom {
+  border-top: 1px solid #1b2a4a;
+  border-bottom: 3px double #1b2a4a;
+  height: 5px;
+  margin-top: 0.3em;
+}
+
 .year-heading {
   font-family: "Monomakh", Georgia, serif;
   font-weight: 700;
   font-size: 4rem;
   letter-spacing: 0.04em;
   text-align: left;
-  margin-bottom: 0;
+  margin: 0.4em 0;
+  line-height: 1;
+  color: #1b2a4a;
 }
 
 .app-bar-title {
