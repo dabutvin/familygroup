@@ -60,6 +60,12 @@
           prepend-icon="mdi-image"
           title="Photos"
         />
+        <v-list-item
+          class="mt-2"
+          to="/stories"
+          prepend-icon="mdi-book-open-variant"
+          title="Isaac and Celia’s story"
+        />
         <v-list-item class="mt-2" prepend-icon="mdi-cog" title="About" />
       </v-list>
     </v-navigation-drawer>
