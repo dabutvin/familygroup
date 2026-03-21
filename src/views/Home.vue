@@ -5,6 +5,8 @@
       <v-toolbar-title class="mr-12 align-center">
         <span class="app-bar-title">The Isaac and Celia Sklar Family Group</span>
       </v-toolbar-title>
+      <v-spacer />
+      <JournalSearch :entries="entries" @select="onJournalSearchSelect" />
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" :order="1" color="#f5f0e8">
@@ -106,10 +108,8 @@
           <div class="entry-text-col">
             <v-row align="center" justify="center">
               <v-col cols="12" sm="9">
-                <h2 class="entry-title">
-                  {{ entry.title }}
-                </h2>
-                <div class="content" v-html="renderMarkdown(entry.text)"></div>
+                <h2 class="entry-title" v-html="entryTitleHtml(entry)"></h2>
+                <div class="content" v-html="entryBodyHtml(entry)"></div>
                 <div
                   v-if="entryScans(entry.date).length"
                   class="scan-thumbs-row"
@@ -178,8 +178,10 @@
 <script>
 import MarkdownIt from "markdown-it";
 import VueEasyLightbox from "vue-easy-lightbox";
+import JournalSearch from "../components/JournalSearch.vue";
 import { entries } from "../entries";
 import { getScans } from "../entries/scans";
+import { highlightHtmlWithTokens, highlightPlainText } from "../searchEntries";
 import { getYearHeadlines } from "../yearHeadlines";
 
 const md = new MarkdownIt({ html: true });
@@ -194,6 +196,7 @@ function getCachedScans(date) {
 
 export default {
   components: {
+    JournalSearch,
     VueEasyLightbox,
   },
   props: {
@@ -222,11 +225,23 @@ export default {
       lightboxVisible: false,
       lightboxIndex: 0,
       lightboxImgs: [],
+      highlightEntryId: null,
+      highlightTokens: [],
     };
   },
   methods: {
-    renderMarkdown(text) {
-      return md.render(text);
+    entryTitleHtml(entry) {
+      if (this.highlightEntryId === entry.id && this.highlightTokens.length) {
+        return highlightPlainText(entry.title, this.highlightTokens);
+      }
+      return highlightPlainText(entry.title, []);
+    },
+    entryBodyHtml(entry) {
+      const html = md.render(entry.text);
+      if (this.highlightEntryId !== entry.id || !this.highlightTokens.length) {
+        return html;
+      }
+      return highlightHtmlWithTokens(html, this.highlightTokens);
     },
     entriesByYear(year) {
       return this.entries.filter((entry) => entry.year === year);
@@ -241,7 +256,25 @@ export default {
       this.lightboxIndex = index;
       this.lightboxVisible = true;
     },
-    setActiveYear(year, id) {
+    scrollToEntry(id, scrollToHighlight) {
+      const entryEl = document.querySelector(`#entry_${id}`);
+      if (!entryEl) return;
+      const appBar = document.querySelector(".v-app-bar");
+      const offset = appBar ? appBar.offsetHeight + 16 : 64;
+      let target = entryEl;
+      if (scrollToHighlight) {
+        const mark = entryEl.querySelector("mark.search-highlight");
+        if (mark) target = mark;
+      }
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    },
+    setActiveYear(year, id, fromSearch = false) {
+      if (!fromSearch) {
+        this.highlightEntryId = null;
+        this.highlightTokens = [];
+      }
       this.active = year;
       if (!this.openedGroups.includes(year)) {
         this.openedGroups = [year];
@@ -251,14 +284,11 @@ export default {
       }
       if (id != undefined) {
         this.$nextTick(() => {
-          const el = document.querySelector(`#entry_${id}`);
-          if (el) {
-            const appBar = document.querySelector(".v-app-bar");
-            const offset = appBar ? appBar.offsetHeight + 16 : 64;
-            const top =
-              el.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top, behavior: "smooth" });
-          }
+          this.$nextTick(() => {
+            requestAnimationFrame(() => {
+              this.scrollToEntry(id, fromSearch);
+            });
+          });
         });
       } else {
         window.scrollTo(0, 0);
@@ -280,6 +310,11 @@ export default {
     },
     goPrevious() {
       this.setActiveYear(this.active - 1);
+    },
+    onJournalSearchSelect({ entry, tokens }) {
+      this.highlightEntryId = entry.id;
+      this.highlightTokens = tokens;
+      this.setActiveYear(entry.year, entry.id, true);
     },
   },
 };
@@ -472,6 +507,14 @@ export default {
   font-size: 1.25rem;
   margin-bottom: 1.5em;
   margin-right: 0;
+}
+
+.entry-title :deep(mark.search-highlight),
+.content :deep(mark.search-highlight) {
+  background-color: rgba(255, 235, 120, 0.55);
+  color: inherit;
+  padding: 0 0.05em;
+  border-radius: 2px;
 }
 
 .year-masthead {
