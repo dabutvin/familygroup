@@ -635,7 +635,7 @@ export default {
   }
 
   .year-nav {
-    justify-content: stretch;
+    justify-content: space-between;
   }
 
   .year-nav-btn {
