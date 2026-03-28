@@ -215,4 +215,31 @@ export default {
   font-style: italic;
 }
 
+@media (max-width: 600px) {
+  .stories-toolbar-title {
+    font-size: 1rem;
+  }
+
+  .stories-inner {
+    max-width: 100%;
+  }
+
+  .stories-content :deep(h2) {
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+  }
+
+  .stories-content :deep(h3) {
+    font-size: 1rem;
+  }
+
+  .stories-content :deep(p) {
+    text-indent: 1em;
+  }
+
+  .stories-content :deep(nav.stories-toc) {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
 </style>

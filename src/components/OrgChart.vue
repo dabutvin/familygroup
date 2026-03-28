@@ -6,6 +6,10 @@
     @mousemove="onMouseMove"
     @mouseup="onMouseUp"
     @mouseleave="onMouseUp"
+    @touchstart="onTouchStart"
+    @touchmove="onTouchMove"
+    @touchend="onTouchEnd"
+    @touchcancel="onTouchEnd"
   >
     <div class="orgchart" :style="chartStyle">
       <org-chart-node :node="datasource">
@@ -29,6 +33,7 @@ export default {
   data() {
     return {
       dragging: false,
+      touchDragging: false,
       startX: 0,
       startY: 0,
       scrollLeft: 0,
@@ -73,6 +78,31 @@ export default {
         this.$refs.container.style.cursor = "grab";
       }
     },
+    onTouchStart(e) {
+      if (!this.pan) return;
+      const touch = e.touches?.[0];
+      const el = this.$refs.container;
+      if (!touch || !el) return;
+      this.touchDragging = true;
+      this.startX = touch.pageX - el.offsetLeft;
+      this.startY = touch.pageY - el.offsetTop;
+      this.scrollLeft = el.scrollLeft;
+      this.scrollTop = el.scrollTop;
+    },
+    onTouchMove(e) {
+      if (!this.touchDragging) return;
+      const touch = e.touches?.[0];
+      const el = this.$refs.container;
+      if (!touch || !el) return;
+      e.preventDefault();
+      const x = touch.pageX - el.offsetLeft;
+      const y = touch.pageY - el.offsetTop;
+      el.scrollLeft = this.scrollLeft - (x - this.startX);
+      el.scrollTop = this.scrollTop - (y - this.startY);
+    },
+    onTouchEnd() {
+      this.touchDragging = false;
+    },
   },
 };
 </script>
@@ -82,6 +112,7 @@ export default {
   overflow: auto;
   text-align: center;
   user-select: none;
+  touch-action: none;
 }
 .orgchart {
   display: inline-block;

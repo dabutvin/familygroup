@@ -33,4 +33,10 @@ export default {
 .org-node .title {
   padding: 0 5px;
 }
+
+@media (max-width: 600px) {
+  .orgchart-container {
+    height: calc(100vh - 48px);
+  }
+}
 </style>

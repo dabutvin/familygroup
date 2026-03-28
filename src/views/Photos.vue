@@ -130,12 +130,38 @@ export default {
 .img-container {
   columns: 6 150px;
   column-gap: 1rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .image {
-  margin: 0 1rem 1rem 0;
+  margin: 0 0 1rem;
   display: inline-block;
   width: 100%;
   cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 960px) {
+  .img-container {
+    columns: 4 140px;
+    column-gap: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-container {
+    columns: 2 130px;
+    column-gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .image {
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
 }
 </style>

@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-app-bar color="#1b2a4a" density="compact" :order="0">
       <v-app-bar-nav-icon color="#f5f0e8" @click.stop="drawer = !drawer" />
-      <v-toolbar-title class="mr-12 align-center">
+      <v-toolbar-title class="home-toolbar-title align-center">
         <span class="app-bar-title">The Isaac and Celia Sklar Family Group</span>
       </v-toolbar-title>
       <v-spacer />
@@ -163,12 +163,14 @@
           <div class="entry-text-col">
             <v-row align="center" justify="center">
               <v-col cols="12" sm="9">
-                <v-btn class="float-left" variant="text" @click="goPrevious">
-                  Previous
-                </v-btn>
-                <v-btn class="float-right" variant="text" @click="goNext">
-                  Next
-                </v-btn>
+                <div class="year-nav">
+                  <v-btn class="year-nav-btn" variant="text" @click="goPrevious">
+                    Previous
+                  </v-btn>
+                  <v-btn class="year-nav-btn" variant="text" @click="goNext">
+                    Next
+                  </v-btn>
+                </div>
               </v-col>
             </v-row>
           </div>
@@ -437,7 +439,7 @@ export default {
   border-collapse: collapse;
   border: none;
   width: 100%;
-  max-width: 380px;
+  max-width: min(100%, 380px);
   margin: 1em 0;
   font-family: "Courier Prime", "IBM Plex Mono", monospace;
   font-size: 0.9em;
@@ -579,10 +581,66 @@ export default {
   color: #1b2a4a;
 }
 
+.home-toolbar-title {
+  min-width: 0;
+}
+
 .app-bar-title {
   font-family: "Monomakh", Georgia, serif;
   font-size: 1.1rem;
   color: #f5f0e8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.year-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.year-nav-btn {
+  min-width: 100px;
+}
+
+@media (max-width: 600px) {
+  .year-masthead {
+    padding: 1rem 0.75rem 0;
+  }
+
+  .year-heading {
+    font-size: 2.5rem;
+    margin: 0.25em 0;
+  }
+
+  .entry-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .content :deep(p) {
+    text-indent: 1em;
+  }
+
+  .content :deep(table) {
+    font-size: 0.82em;
+  }
+
+  .content :deep(table th),
+  .content :deep(table td) {
+    white-space: normal;
+  }
+
+  .year-nav {
+    justify-content: stretch;
+  }
+
+  .year-nav-btn {
+    flex: 1 1 0;
+  }
 }
 </style>
 
