@@ -177,13 +177,21 @@
         </div>
       </div>
       <footer class="site-footer">
-        Dedicated in memory to Marilyn Butvinik (2/14/1931 &ndash; 11/17/2025)
+        <button
+          type="button"
+          class="dedication-trigger"
+          aria-label="Celebrate this dedication with confetti"
+          @click="launchDedicationConfetti"
+        >
+          Dedicated in memory to Marilyn Butvinik (2/14/1931 &ndash; 11/17/2025)
+        </button>
       </footer>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import confetti from "canvas-confetti";
 import MarkdownIt from "markdown-it";
 import VueEasyLightbox from "vue-easy-lightbox";
 import JournalSearch from "../components/JournalSearch.vue";
@@ -323,6 +331,24 @@ export default {
       this.highlightEntryId = entry.id;
       this.highlightTokens = tokens;
       this.setActiveYear(entry.year, entry.id, true);
+    },
+    launchDedicationConfetti() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+      const base = { origin: { y: 0.85 } };
+      confetti({
+        ...base,
+        particleCount: 80,
+        spread: 70,
+        startVelocity: 45,
+      });
+      confetti({
+        ...base,
+        particleCount: 50,
+        spread: 110,
+        startVelocity: 35,
+      });
     },
   },
 };
@@ -689,5 +715,25 @@ export default {
   padding: 24px 16px;
   width: 100%;
   text-align: center;
+}
+
+.dedication-trigger {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.dedication-trigger:hover {
+  opacity: 0.9;
+}
+
+.dedication-trigger:focus-visible {
+  outline: 2px solid #f5f0e8;
+  outline-offset: 4px;
 }
 </style>
