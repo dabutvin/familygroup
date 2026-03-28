@@ -724,8 +724,7 @@ export default {
   cursor: pointer;
   font: inherit;
   padding: 0;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 .dedication-trigger:hover {
